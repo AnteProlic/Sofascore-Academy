@@ -1,0 +1,39 @@
+.container {
+    height: 350px;
+    width: 350px;
+    border: 1px solid black;
+    margin: 0 8px;
+    position: relative;
+}
+
+.red {
+    background-color: darkred;
+    height: 50px;
+    width: 50px;
+}
+
+.blue {
+    background-color: darkblue;
+    height: 150px;
+    width: 150px;
+}
+
+.green {
+    background-color: darkgreen;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+}
+
+.yellow {
+    background-color: yellow;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+}
+
+

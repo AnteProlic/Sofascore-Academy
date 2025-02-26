@@ -1,1 +1,3 @@
-This is main.
+# Sofascore Academy - Frontend
+
+Homeworks and projects...

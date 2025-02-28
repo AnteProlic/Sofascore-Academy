@@ -1,1 +1,150 @@
+body {
+    background-color: #f2f4f7;
+    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;    
+}
 
+input {
+    height: 40px;
+    width: 350px;
+    padding: 5px 15px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: gainsboro;
+    border-width: 1px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border: 1px solid #0866ff;
+    caret-color: #0866ff;
+}
+
+input:focus::placeholder {
+    color: rgb(150, 150, 150);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration-line: underline;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    height: 700px;
+    margin: 0 50px;
+    gap: 50px;
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 200px;
+    width: 50%;
+}
+
+#fb-logo {
+    width: 320px;
+    margin: 0 20px;
+}
+
+.description {
+    font-size: 28px;
+    margin-left: 50px;
+    width: 500px;
+}
+
+.right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.login-container {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.login-button {
+    background-color: #0866ff;
+    height: 50px;
+    width: 380px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.forgot-password {
+    color: #0866ff;
+}
+
+.line {
+    width: 100%;
+    border-width: 0;
+    border-top: 1px solid gainsboro;
+}
+
+.register-button {
+    background-color: #42b72a;
+    height: 50px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.create-page {
+    color: black;
+}
+
+
+@media only screen and (900px < width < 1150px) {
+    .description {
+        font-size: 24px;
+        width: 400px;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+    .form-container {
+        flex-direction: column;
+    }
+
+    .left-container {
+        align-items: center;
+        padding: 0;
+        margin-top: 0;
+        width: 100%;
+        height: 100px;
+    }
+
+    .description {
+        text-align: center;
+        font-size: 24px;
+        margin: 0;
+        width: 420px;
+    }
+}

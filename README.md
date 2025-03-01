@@ -1,3 +1,3 @@
 # Sofascore Academy - Frontend
 
-Homeworks and projects...
+Private repository for Sofascore Academy (Frontend) homework and projects

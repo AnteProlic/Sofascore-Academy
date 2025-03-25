@@ -31,6 +31,7 @@ export default function Input() {
     e.preventDefault() // prevent page changing on submit
     // store new circle in your state and then reset the selector to default radius
     // get your next circle parameters other than radius with `getRandomCircleParameters` method
+    setCircles(aura => [...aura, getRandomCircleParameters(currentRadius)])
     setCurrentRadius(DEFAULT_SELECTED_RADIUS)
   }
 
@@ -47,6 +48,7 @@ export default function Input() {
           min="0"
           max="150"
           value={currentRadius}
+          onChange={e => setCurrentRadius(Number(e.target.value))}
         />
         </label>
         <button type="submit" onClick={onClick}>Add another circle</button>

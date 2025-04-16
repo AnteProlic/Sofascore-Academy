@@ -16,7 +16,7 @@ export const textStyles = defineTextStyles({
     extraLarge: {
       value: {
         fontSize: "2xl",
-        fontWeight: 700,
+        fontWeight: 600,
         lineHeight: 1.14,
         letterSpacing: "-0.14px",
       },

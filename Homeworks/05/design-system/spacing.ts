@@ -11,4 +11,5 @@ export const spacing: Tokens["spacing"] = {
   "2xl": { value: "32px" },
   "3xl": { value: "40px" },
   "4xl": { value: "48px" },
+  s1: {value: "60px"}
 }

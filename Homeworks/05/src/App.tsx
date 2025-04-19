@@ -1,79 +1,82 @@
 import { useEffect, useState } from "react"
 import { Flex } from "../styled-system/jsx"
-import { getPokemon } from "./routes"
-import { Pokemon, pokemonType } from "./interface"
 import { styled } from "../styled-system/jsx"
 import Card from "./components/Card"
+import { getMultiple, getPokemon } from "./routes"
 
+const FIRST_N: number = 4
 
 function App() {
-  const [pokemon, setPokemon] = useState<Pokemon[]>([])
-  const [count, setCount] = useState<number>(2)
-  const [loading, setLoading] = useState<Boolean>(true)
-
-  function addPokemon(pokemonId: number) {
-    fetch(getPokemon(pokemonId))
-      .then(res => res.json())
-      .then(res => {
-        let types: pokemonType[] = []
-
-        res.types.forEach((type: { slot: any; type: { name: any } }) => {
-          types.push({
-            slot: type.slot,
-            type: type.type.name
-          })
-        })
-
-        let newPokemon: Pokemon = {
-          id: res.id,
-          name: res.name,
-          hp: res.stats.find((stat: { stat: { name: string } }) => stat.stat.name === "hp").base_stat,
-          height: res.height,
-          weight: res.weight,
-          types: types,
-          img_url: res.sprites.other["official-artwork"].front_default,
-          front_url: res.sprites.other.showdown.front_default,
-          back_url: res.sprites.other.showdown.back_default
-        }
-
-        setPokemon(pokemon => [...pokemon, newPokemon])
-      })
-  }
+  const [pokemons, setPokemons] = useState<string[]>([])
+  const [count, setCount] = useState<number>(FIRST_N)
+  const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
     if (loading === true) {
-      addPokemon(count-1)
+      fetch(getMultiple(FIRST_N), {cache: "no-store"})
+      .then(res => res.json())
+      .then(res => {
+        res.results.forEach((pokemon: { name: string }) => {
+          setPokemons(pokemons => [...pokemons, pokemon.name])
+        })
+      })
       setLoading(false)
+    } else {
+      fetch(getPokemon(count), {cache: "no-store"})
+      .then(res => res.json())
+      .then(res => {
+        setPokemons(pokemons => [...pokemons, res.name])
+      })
+      .catch(err => {
+        console.error(err)
+      })
     }
-    addPokemon(count)
+
+    const onScroll = () => {
+      if (document.body.scrollHeight - 200 <= window.scrollY + window.innerHeight) {
+        setCount(count => count + 1)
+      }
+    }
+      
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [count])
 
+
   return (
-    <Flex direction="column">
-      <Flex h="3xl" w="100%" background="background.header" position="sticky" top="0" justifyContent="space-between" alignItems="center" padding="45px 18px">
-        <styled.img src={`../public/heart.png`} h="2xl" scale="fit" onClick={() => {
-          setCount(count => count+1)
-        }}/>
-        <Flex color="text.header" textStyle="display.large" alignItems="center" h="2xl" w="206px">
-          <styled.img src={`../public/poke-ball.png`} h="2xl" scale="fit"/>
+    <Flex direction="column" fontFamily="'Poppins', sans-serif">
+      <Flex 
+      h={{ base: "3xl", lg: "s1" }}
+      w="100%"
+      background="background.header" 
+      position="sticky" 
+      top="0" 
+      justifyContent="space-between" 
+      alignItems="center"
+      zIndex="1"
+      paddingX={{ base: "sm", sm: "xl"}}
+      paddingY={{ base: "sm", sm: "xl"}}>
+        <styled.img src={`src/images/heart.png`} 
+        h={{ base: "lg", sm: "xl"}} 
+        scale="fit" 
+        cursor={{_hover: "pointer"}}
+        animationDirection="reverse"
+        animation={{_hover: "grow 0.6s infinite"}}
+        />
+        <Flex color="text.header" textStyle={{ base: "display.small", sm: "display.medium" }} justifyContent="center" alignItems="center" h={{ base: "lg", sm: "xl" }}>
+          <styled.img src={`src/images/poke-ball.png`} h={{ base: "lg", sm: "xl" }} scale="fit"/>
           POKEDEX
         </Flex>
-        <styled.img src={`../public/gear.png`} h="2xl" scale="fit"/>
+        <styled.img src={`src/images/gear.png`} 
+        h={{ base: "lg", sm: "xl" }} 
+        scale="fit"
+        animation={{_hover: "spin 2s linear infinite"}}
+        cursor={{_hover: "pointer"}}
+        />
       </Flex>
       <Flex direction="column">
-        {pokemon.map((p: Pokemon) => {
-          return <Card 
-          key={p.id} 
-          id={p.id} 
-          name={p.name} 
-          hp={p.hp} 
-          height={p.height} 
-          weight={p.weight} 
-          types={p.types}
-          img_url={p.img_url}
-          front_url={p.front_url}
-          back_url={p.back_url}
-          />
+        {pokemons.map((name: string, index: number) => {
+          return <Card key={name} name={name} index={index}/>
         })}
       </Flex>
     </Flex>

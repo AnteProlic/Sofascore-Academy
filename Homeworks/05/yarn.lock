@@ -345,33 +345,33 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
-"@pandacss/config@^0.53.3", "@pandacss/config@0.53.3":
-  "integrity" "sha512-VgHeywWkJRtYDiHqV1fZ8K8NpN/Z70TDv61YBfkN8AWdGWg7EXK0oxDaqM4bIK4XCzTbh9OPYFNw1fLjA2LDUg=="
-  "resolved" "https://registry.npmjs.org/@pandacss/config/-/config-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/config@^0.53.4", "@pandacss/config@0.53.4":
+  "integrity" "sha512-k1ZdIRKrOxPP8ht2ueTordaEA+LvGGuwlgpFBbER6LcPJAWMUR0s5cm01Mte+7Do/3337fYs1Y2NWfaJhlxn7A=="
+  "resolved" "https://registry.npmjs.org/@pandacss/config/-/config-0.53.4.tgz"
+  "version" "0.53.4"
   dependencies:
-    "@pandacss/logger" "0.53.3"
-    "@pandacss/preset-base" "0.53.3"
-    "@pandacss/preset-panda" "0.53.3"
-    "@pandacss/shared" "0.53.3"
-    "@pandacss/types" "0.53.3"
+    "@pandacss/logger" "0.53.4"
+    "@pandacss/preset-base" "0.53.4"
+    "@pandacss/preset-panda" "0.53.4"
+    "@pandacss/shared" "0.53.4"
+    "@pandacss/types" "0.53.4"
     "bundle-n-require" "1.1.2"
     "escalade" "3.1.2"
     "merge-anything" "5.1.7"
     "microdiff" "1.3.2"
     "typescript" "5.6.2"
 
-"@pandacss/core@^0.53.3", "@pandacss/core@0.53.3":
-  "integrity" "sha512-t+oSIP20I+V8ZzYIIchgbbBvi3d/k14Hfyt2ylDg3HrdZhsXAkP74TdaCLsuFUkSA+6A+hLvageGvAIKa6fF5g=="
-  "resolved" "https://registry.npmjs.org/@pandacss/core/-/core-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/core@^0.53.4", "@pandacss/core@0.53.4":
+  "integrity" "sha512-2MhtDXNv7JS2n+fdJyKy5nzVazat73JwUv1mdcYLDksgnBdfTO3SwtzWBlbPtuUVYehnKuweGJ4tlzpZB9mTyA=="
+  "resolved" "https://registry.npmjs.org/@pandacss/core/-/core-0.53.4.tgz"
+  "version" "0.53.4"
   dependencies:
     "@csstools/postcss-cascade-layers" "4.0.6"
-    "@pandacss/is-valid-prop" "^0.53.3"
-    "@pandacss/logger" "0.53.3"
-    "@pandacss/shared" "0.53.3"
-    "@pandacss/token-dictionary" "0.53.3"
-    "@pandacss/types" "0.53.3"
+    "@pandacss/is-valid-prop" "^0.53.4"
+    "@pandacss/logger" "0.53.4"
+    "@pandacss/shared" "0.53.4"
+    "@pandacss/token-dictionary" "0.53.4"
+    "@pandacss/types" "0.53.4"
     "browserslist" "4.23.3"
     "hookable" "5.5.3"
     "lightningcss" "1.25.1"
@@ -387,75 +387,75 @@
     "postcss-selector-parser" "6.1.2"
     "ts-pattern" "5.0.8"
 
-"@pandacss/dev@^0.53.3":
-  "integrity" "sha512-ses8bYFGEz1CNeB7SYCKAixoOcqAczZfNxGYPSYqVqnhcii1Fobw7xkWwipHcMsdHcOBZSp3bxSegMpKirD7kA=="
-  "resolved" "https://registry.npmjs.org/@pandacss/dev/-/dev-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/dev@^0.53.4":
+  "integrity" "sha512-ZUsIiQHuMW+d8N+2PZNC5sEMdYQBvyxzoGJJbSUpsb3brDru4EviO4r8Fo2lgUWRFMWhDS2IyzghgjOcoq2bJg=="
+  "resolved" "https://registry.npmjs.org/@pandacss/dev/-/dev-0.53.4.tgz"
+  "version" "0.53.4"
   dependencies:
     "@clack/prompts" "0.9.1"
-    "@pandacss/config" "0.53.3"
-    "@pandacss/logger" "0.53.3"
-    "@pandacss/node" "0.53.3"
-    "@pandacss/postcss" "0.53.3"
-    "@pandacss/preset-panda" "0.53.3"
-    "@pandacss/shared" "0.53.3"
-    "@pandacss/token-dictionary" "0.53.3"
-    "@pandacss/types" "0.53.3"
+    "@pandacss/config" "0.53.4"
+    "@pandacss/logger" "0.53.4"
+    "@pandacss/node" "0.53.4"
+    "@pandacss/postcss" "0.53.4"
+    "@pandacss/preset-panda" "0.53.4"
+    "@pandacss/shared" "0.53.4"
+    "@pandacss/token-dictionary" "0.53.4"
+    "@pandacss/types" "0.53.4"
     "cac" "6.7.14"
 
-"@pandacss/extractor@0.53.3":
-  "integrity" "sha512-crrpHMqI6UWkFj0kylQkGgYxmqU96Q7cpFq2qDMYNF9QUGDWGkjVGE36NAVrMxj4cCBHOWy18fBL32/OuNXCgA=="
-  "resolved" "https://registry.npmjs.org/@pandacss/extractor/-/extractor-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/extractor@0.53.4":
+  "integrity" "sha512-81iQ9akPjdC24g6Gz0eCAYigtTUom4jjqp8oelgzSFfOZBhxFTTE3CR080lyc3sxQygKxXjV3HWQTg+9YzY4YQ=="
+  "resolved" "https://registry.npmjs.org/@pandacss/extractor/-/extractor-0.53.4.tgz"
+  "version" "0.53.4"
   dependencies:
-    "@pandacss/shared" "0.53.3"
+    "@pandacss/shared" "0.53.4"
     "ts-evaluator" "1.2.0"
     "ts-morph" "24.0.0"
 
-"@pandacss/generator@0.53.3":
-  "integrity" "sha512-YzXpkvpWuYogBYZVp1ZQSXkCl+yTBICoVAIiMDlstEvMI+5d7THLzH3/u+0VzSkuBxWcAa6pJUGGDeAlHausMw=="
-  "resolved" "https://registry.npmjs.org/@pandacss/generator/-/generator-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/generator@0.53.4":
+  "integrity" "sha512-HpmbP+f4KbZ4DM2cNLuqwjEdDAAjWqfKCK1Amt7Z4a0ZcTDGUcO+PjUvTwAzH4Ly8iQnhVcvZXk0gzs/7K/RYg=="
+  "resolved" "https://registry.npmjs.org/@pandacss/generator/-/generator-0.53.4.tgz"
+  "version" "0.53.4"
   dependencies:
-    "@pandacss/core" "0.53.3"
-    "@pandacss/is-valid-prop" "^0.53.3"
-    "@pandacss/logger" "0.53.3"
-    "@pandacss/shared" "0.53.3"
-    "@pandacss/token-dictionary" "0.53.3"
-    "@pandacss/types" "0.53.3"
+    "@pandacss/core" "0.53.4"
+    "@pandacss/is-valid-prop" "^0.53.4"
+    "@pandacss/logger" "0.53.4"
+    "@pandacss/shared" "0.53.4"
+    "@pandacss/token-dictionary" "0.53.4"
+    "@pandacss/types" "0.53.4"
     "javascript-stringify" "2.1.0"
     "outdent" " ^0.8.0"
     "pluralize" "8.0.0"
     "postcss" "8.4.49"
     "ts-pattern" "5.0.8"
 
-"@pandacss/is-valid-prop@^0.53.3":
-  "integrity" "sha512-7hjfChTQOdfJKp1P4ZSYt/nJyx+1mf+Eqd6fGFdLqR02d7lnnHCc54wl9wRuOEcPKB2wqWaj/25RvDC6JBDymg=="
-  "resolved" "https://registry.npmjs.org/@pandacss/is-valid-prop/-/is-valid-prop-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/is-valid-prop@^0.53.4":
+  "integrity" "sha512-bjhRqYRImWuOdDhASfd8hI4nBSMcvawiQR2FoduxThf9C2Vh9Kc03U9JN0pRrisC+vg2W+PqnVXgCY+Gy4yVAw=="
+  "resolved" "https://registry.npmjs.org/@pandacss/is-valid-prop/-/is-valid-prop-0.53.4.tgz"
+  "version" "0.53.4"
 
-"@pandacss/logger@^0.53.3", "@pandacss/logger@0.53.3":
-  "integrity" "sha512-0ADIvBolFRg7pPPU1JcaPT/YqvCEbO0HpUa6ab6VfcIVcTufEmQ+G2QvysW3+uHjBP+WurEMlGrA0FJSjp8DkA=="
-  "resolved" "https://registry.npmjs.org/@pandacss/logger/-/logger-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/logger@^0.53.4", "@pandacss/logger@0.53.4":
+  "integrity" "sha512-uwiukAMiPvolXi7pr88kcNPuSH2mQZOgkWgbV3v4ZS2rOq2nMmFCC2fG4m76mxRrKjf8BbrcoKd7V7yjXiPSUw=="
+  "resolved" "https://registry.npmjs.org/@pandacss/logger/-/logger-0.53.4.tgz"
+  "version" "0.53.4"
   dependencies:
-    "@pandacss/types" "0.53.3"
+    "@pandacss/types" "0.53.4"
     "kleur" "4.1.5"
 
-"@pandacss/node@0.53.3":
-  "integrity" "sha512-Q3Odc/nh7xV2jnZTua5TpigkRUS6MvdRSrSYDTgcTI48HxIi/c96qF0BZqARfxl8gYZ6RDM+JM6/1FiqaTTeQg=="
-  "resolved" "https://registry.npmjs.org/@pandacss/node/-/node-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/node@0.53.4":
+  "integrity" "sha512-S8hRujGs5GzXsBnTL2DiTs/wKFU47kU8R7QZ1mXk6YikO8qC0vuYAr8xzPJ38kU99DzMhV6rrxbg0IERxB9Eqw=="
+  "resolved" "https://registry.npmjs.org/@pandacss/node/-/node-0.53.4.tgz"
+  "version" "0.53.4"
   dependencies:
-    "@pandacss/config" "0.53.3"
-    "@pandacss/core" "0.53.3"
-    "@pandacss/generator" "0.53.3"
-    "@pandacss/logger" "0.53.3"
-    "@pandacss/parser" "0.53.3"
-    "@pandacss/reporter" "0.53.3"
-    "@pandacss/shared" "0.53.3"
-    "@pandacss/token-dictionary" "0.53.3"
-    "@pandacss/types" "0.53.3"
+    "@pandacss/config" "0.53.4"
+    "@pandacss/core" "0.53.4"
+    "@pandacss/generator" "0.53.4"
+    "@pandacss/logger" "0.53.4"
+    "@pandacss/parser" "0.53.4"
+    "@pandacss/reporter" "0.53.4"
+    "@pandacss/shared" "0.53.4"
+    "@pandacss/token-dictionary" "0.53.4"
+    "@pandacss/types" "0.53.4"
     "browserslist" "4.23.3"
     "chokidar" "4.0.3"
     "fs-extra" "11.2.0"
@@ -476,76 +476,76 @@
     "ts-pattern" "5.0.8"
     "tsconfck" "3.0.2"
 
-"@pandacss/parser@0.53.3":
-  "integrity" "sha512-xfAmFPh1DoIrKhrdgzShejcyqe8G8qa2V54gYxsapr5iv/9AVIcvqmfY/WrgDpGtaVZBAxrfO/FeKRwRgcczpA=="
-  "resolved" "https://registry.npmjs.org/@pandacss/parser/-/parser-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/parser@0.53.4":
+  "integrity" "sha512-8P1xNPjN4VMey4h03693mxFedRmN8QVkaDN30FOmGhurKcVZ/FiAubpt/O5jCm/rZ552Kng/CyGFVSlCudbojg=="
+  "resolved" "https://registry.npmjs.org/@pandacss/parser/-/parser-0.53.4.tgz"
+  "version" "0.53.4"
   dependencies:
-    "@pandacss/config" "^0.53.3"
-    "@pandacss/core" "^0.53.3"
-    "@pandacss/extractor" "0.53.3"
-    "@pandacss/logger" "0.53.3"
-    "@pandacss/shared" "0.53.3"
-    "@pandacss/types" "0.53.3"
+    "@pandacss/config" "^0.53.4"
+    "@pandacss/core" "^0.53.4"
+    "@pandacss/extractor" "0.53.4"
+    "@pandacss/logger" "0.53.4"
+    "@pandacss/shared" "0.53.4"
+    "@pandacss/types" "0.53.4"
     "@vue/compiler-sfc" "3.4.19"
     "magic-string" "0.30.17"
     "ts-morph" "24.0.0"
     "ts-pattern" "5.0.8"
 
-"@pandacss/postcss@0.53.3":
-  "integrity" "sha512-V3Cfe7qH7ZYJljPDFa/aJnU3oPOIyHT7jYpRAx1GZBCtrVoAtnm8bF5pWU6Otd5jmSEppdYTgkwdAMHsJeKZ4A=="
-  "resolved" "https://registry.npmjs.org/@pandacss/postcss/-/postcss-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/postcss@0.53.4":
+  "integrity" "sha512-jAwnsNxzo19kPscamyeOrSHMWCTJRxLd4EouD6HBCvtxQVPpbrjU5pgMMJPGhbRYdcFku8HHpcJMLsEFvqmtQw=="
+  "resolved" "https://registry.npmjs.org/@pandacss/postcss/-/postcss-0.53.4.tgz"
+  "version" "0.53.4"
   dependencies:
-    "@pandacss/node" "0.53.3"
+    "@pandacss/node" "0.53.4"
     "postcss" "8.4.49"
 
-"@pandacss/preset-base@0.53.3":
-  "integrity" "sha512-jqckyXdrtqxM08+5on2Qjo0ZLdXid2+63aN148J4/N5eRCevBn9Cl9ueffsPMAxlAERG6XI6klnRnmxjvvc99A=="
-  "resolved" "https://registry.npmjs.org/@pandacss/preset-base/-/preset-base-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/preset-base@0.53.4":
+  "integrity" "sha512-eGbrTklo9Z0THZnN/FcWtGUQNS+E1z9qTO7dKFItnEuhvS85kT7U5YQkOX/Ip5tYcSUWPpuUq7h+SwnCVyuoXA=="
+  "resolved" "https://registry.npmjs.org/@pandacss/preset-base/-/preset-base-0.53.4.tgz"
+  "version" "0.53.4"
   dependencies:
-    "@pandacss/types" "0.53.3"
+    "@pandacss/types" "0.53.4"
 
-"@pandacss/preset-panda@0.53.3":
-  "integrity" "sha512-pfXAgzl9wG6ifHWX62zTssjhwGXCAvxOgMshiA4juXdWmVO3Bjx2JuuK/MJDQOuWQMAgkKwHGlT+J9KK5I6scg=="
-  "resolved" "https://registry.npmjs.org/@pandacss/preset-panda/-/preset-panda-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/preset-panda@0.53.4":
+  "integrity" "sha512-flIVaB/RCc5FPD5Nb1OP/V82T1XZwMJxFNMAB8lNw2S3bEP3xA8KkUVYLTr3ShyH7j5NQEpjG4tVKQp78FFGSQ=="
+  "resolved" "https://registry.npmjs.org/@pandacss/preset-panda/-/preset-panda-0.53.4.tgz"
+  "version" "0.53.4"
   dependencies:
-    "@pandacss/types" "0.53.3"
+    "@pandacss/types" "0.53.4"
 
-"@pandacss/reporter@0.53.3":
-  "integrity" "sha512-Q4oj71WWi97i27DE6zldXGMJPfmr3tMBR+KNJuHfuwS5f2U3t8H1W4HCqTazrN+GrpNXt0XLXRhTXpbEbiF7IQ=="
-  "resolved" "https://registry.npmjs.org/@pandacss/reporter/-/reporter-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/reporter@0.53.4":
+  "integrity" "sha512-LT2L+KOEKTUbpB1MJST3CyVRPcp00XGZiJRsZMAQuPf+RzjYF6KwbNSgD5FkYCdBsNjTdgxDGgYuRbrN104FxQ=="
+  "resolved" "https://registry.npmjs.org/@pandacss/reporter/-/reporter-0.53.4.tgz"
+  "version" "0.53.4"
   dependencies:
-    "@pandacss/core" "0.53.3"
-    "@pandacss/generator" "0.53.3"
-    "@pandacss/logger" "0.53.3"
-    "@pandacss/shared" "0.53.3"
-    "@pandacss/types" "0.53.3"
+    "@pandacss/core" "0.53.4"
+    "@pandacss/generator" "0.53.4"
+    "@pandacss/logger" "0.53.4"
+    "@pandacss/shared" "0.53.4"
+    "@pandacss/types" "0.53.4"
     "table" "6.9.0"
     "wordwrapjs" "5.1.0"
 
-"@pandacss/shared@0.53.3":
-  "integrity" "sha512-rPrXC0uPH3CEBQ9VHDoBAdAbljGp0tOQwZWbNtcMLIfedeDW7yqI261ZTe7sc+kEbwQM8sog1U+bsSN4wSPxNA=="
-  "resolved" "https://registry.npmjs.org/@pandacss/shared/-/shared-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/shared@0.53.4":
+  "integrity" "sha512-mRtXCZtQKrPl0BVYXK8cR35pKRyMRywfd3FvNIKNm1kfN5+mUaYgPGwpVmC3RX9mam29OrVMI/0bCU9Z2pdhNg=="
+  "resolved" "https://registry.npmjs.org/@pandacss/shared/-/shared-0.53.4.tgz"
+  "version" "0.53.4"
 
-"@pandacss/token-dictionary@0.53.3":
-  "integrity" "sha512-8P3Ka/B16yIGkYPTFJRwyZblocijy6nJvzD4WQlPzosZUq/06CfsqmVFXcb7VpbNXIyzQaxgyG1Beg4+/+HVcQ=="
-  "resolved" "https://registry.npmjs.org/@pandacss/token-dictionary/-/token-dictionary-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/token-dictionary@0.53.4":
+  "integrity" "sha512-PIFT/inoPbJ0sZaU2mOdKDhXAiCMgVghtHI2ukJ6106rjYoNoJfRIFqqkB6gQrpWD1si2i4Cc7aajYV3hzXGuw=="
+  "resolved" "https://registry.npmjs.org/@pandacss/token-dictionary/-/token-dictionary-0.53.4.tgz"
+  "version" "0.53.4"
   dependencies:
-    "@pandacss/logger" "^0.53.3"
-    "@pandacss/shared" "0.53.3"
-    "@pandacss/types" "0.53.3"
+    "@pandacss/logger" "^0.53.4"
+    "@pandacss/shared" "0.53.4"
+    "@pandacss/types" "0.53.4"
     "ts-pattern" "5.0.8"
 
-"@pandacss/types@0.53.3":
-  "integrity" "sha512-ZGBFZ2jYKURhKha8QqXRMeNCMzu3+vq9qICvbeiXcKrnhu00YzRTUdVCyhGm9CA0Nroq0wftNgdAqzVwwgvcRA=="
-  "resolved" "https://registry.npmjs.org/@pandacss/types/-/types-0.53.3.tgz"
-  "version" "0.53.3"
+"@pandacss/types@0.53.4":
+  "integrity" "sha512-yEM/ZfAYEkCi7xMlBqUaKxf0LuMVOyq/bkZkyLuvXIcDVAFJ+eNDDI+oPT8hq7e/An++tVpp0FhY3LQ4X2bpoA=="
+  "resolved" "https://registry.npmjs.org/@pandacss/types/-/types-0.53.4.tgz"
+  "version" "0.53.4"
 
 "@rollup/rollup-win32-x64-msvc@4.37.0":
   "integrity" "sha512-LWbXUBwn/bcLx2sSsqy7pK5o+Nr+VCoRoAohfJ5C/aBio9nfJmGQqHAhU6pwxV/RmyTk5AqdySma7uwWGlmeuA=="
@@ -998,6 +998,11 @@
   "integrity" "sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ=="
   "resolved" "https://registry.npmjs.org/deep-is/-/deep-is-0.1.4.tgz"
   "version" "0.1.4"
+
+"dequal@^2.0.3":
+  "integrity" "sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA=="
+  "resolved" "https://registry.npmjs.org/dequal/-/dequal-2.0.3.tgz"
+  "version" "2.0.3"
 
 "detect-libc@^1.0.3":
   "integrity" "sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg=="
@@ -1814,7 +1819,7 @@
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.2.tgz"
   "version" "0.14.2"
 
-"react@^19.0.0":
+"react@^16.11.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react@^19.0.0":
   "integrity" "sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-19.0.0.tgz"
   "version" "19.0.0"
@@ -1839,7 +1844,7 @@
   "resolved" "https://registry.npmjs.org/reusify/-/reusify-1.1.0.tgz"
   "version" "1.1.0"
 
-"rollup@^4.30.1":
+"rollup@^4.34.9":
   "integrity" "sha512-iAtQy/L4QFU+rTJ1YUjXqJOJzuwEghqWzCEYD2FEghT7Gsy1VdABntrO4CLopA5IkflTyqNiLNwPcOJ3S7UKLg=="
   "resolved" "https://registry.npmjs.org/rollup/-/rollup-4.37.0.tgz"
   "version" "4.37.0"
@@ -1949,6 +1954,14 @@
   dependencies:
     "has-flag" "^4.0.0"
 
+"swr@^2.3.3":
+  "integrity" "sha512-dshNvs3ExOqtZ6kJBaAsabhPdHyeY4P2cKwRCniDVifBMoG/SVI7tfLWqPXriVspf2Rg4tPzXJTnwaihIeFw2A=="
+  "resolved" "https://registry.npmjs.org/swr/-/swr-2.3.3.tgz"
+  "version" "2.3.3"
+  dependencies:
+    "dequal" "^2.0.3"
+    "use-sync-external-store" "^1.4.0"
+
 "table@6.9.0":
   "integrity" "sha512-9kY+CygyYM6j02t5YFHbNz2FN5QmYGv9zAjVp4lCDjlCw7amdckXlEt/bjMhUIfj4ThGRE4gCUH5+yGnNuPo5A=="
   "resolved" "https://registry.npmjs.org/table/-/table-6.9.0.tgz"
@@ -1960,7 +1973,7 @@
     "string-width" "^4.2.3"
     "strip-ansi" "^6.0.1"
 
-"tinyglobby@^0.2.9", "tinyglobby@0.2.12":
+"tinyglobby@^0.2.12", "tinyglobby@^0.2.9", "tinyglobby@0.2.12":
   "integrity" "sha512-qkf4trmKSIiMTs/E63cxH+ojC2unam7rJ0WrauAzpT3ECNTxGRMlaXxVbfxMUC/w0LaYk6jQ4y/nGR9uBO3tww=="
   "resolved" "https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.12.tgz"
   "version" "0.2.12"
@@ -2034,9 +2047,9 @@
   "version" "5.6.2"
 
 "ufo@^1.5.4":
-  "integrity" "sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ=="
-  "resolved" "https://registry.npmjs.org/ufo/-/ufo-1.5.4.tgz"
-  "version" "1.5.4"
+  "integrity" "sha512-9a4/uxlTWJ4+a5i0ooc1rU7C7YOw3wT+UGqdeNNHWnOF9qcMBgLRS+4IYUqbczewFx4mLEig6gawh7X6mFlEkA=="
+  "resolved" "https://registry.npmjs.org/ufo/-/ufo-1.6.1.tgz"
+  "version" "1.6.1"
 
 "undici-types@~6.21.0":
   "integrity" "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="
@@ -2063,19 +2076,27 @@
   dependencies:
     "punycode" "^2.1.0"
 
+"use-sync-external-store@^1.4.0":
+  "integrity" "sha512-Rb46I4cGGVBmjamjphe8L/UnvJD+uPPtTkNvX5mZgqdbavhI4EbgIWJiIHXJ8bc/i9EQGPRh4DwEURJ552Do0A=="
+  "resolved" "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.5.0.tgz"
+  "version" "1.5.0"
+
 "util-deprecate@^1.0.2":
   "integrity" "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw=="
   "resolved" "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   "version" "1.0.2"
 
 "vite@^4.2.0 || ^5.0.0 || ^6.0.0", "vite@^6.2.0":
-  "integrity" "sha512-j023J/hCAa4pRIUH6J9HemwYfjB5llR2Ps0CWeikOtdR8+pAURAk0DoJC5/mm9kd+UgdnIy7d6HE4EAvlYhPhA=="
-  "resolved" "https://registry.npmjs.org/vite/-/vite-6.2.5.tgz"
-  "version" "6.2.5"
+  "integrity" "sha512-ZSvGOXKGceizRQIZSz7TGJ0pS3QLlVY/9hwxVh17W3re67je1RKYzFHivZ/t0tubU78Vkyb9WnHPENSBCzbckg=="
+  "resolved" "https://registry.npmjs.org/vite/-/vite-6.3.2.tgz"
+  "version" "6.3.2"
   dependencies:
     "esbuild" "^0.25.0"
+    "fdir" "^6.4.3"
+    "picomatch" "^4.0.2"
     "postcss" "^8.5.3"
-    "rollup" "^4.30.1"
+    "rollup" "^4.34.9"
+    "tinyglobby" "^0.2.12"
   optionalDependencies:
     "fsevents" "~2.3.3"
 

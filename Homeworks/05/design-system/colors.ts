@@ -2,16 +2,17 @@ import { SemanticTokens } from "@pandacss/dev"
 
 export const colors: SemanticTokens["colors"] = {
   background: {
-    header: { value: { base: "#E3350D", _dark: "#4D638C" } },
+    primary: { value: { base: "#E3350D", _dark: "#4D638C" } },
+    secondary: {value: {base: "#3B4CCA"}},
     image: { value: { base: "#EEEEEE", _dark: "#354159" } },
     details: { value: { base: "#FFFFFF", _dark: "#1F2735" } },
   },
   text: {
     default: { value: { base: "#262626", _dark: "#ACACAC" } },
-    header: { value: { base: "#FFFFFF", _dark: "#FFFFFF" } },
+    primary: { value: { base: "#FFFFFF", _dark: "#FFFFFF" } },
     type: {value: {base: "#000000", _dark: "#000000"}}
   },
-  type: {
+/*   type: {
     electric: { value: {base: "#F8D030"} },
     fairy: { value: {base: "#F0B6BC"} },
     fighting: { value: {base: "#C03028"} },
@@ -29,5 +30,5 @@ export const colors: SemanticTokens["colors"] = {
     bug: { value: {base: "#A8B820"} },
     dragon: { value: {base: "#7038F8"} },
     rock: { value: {base: "#B8A038"} },
-  }
+  } */
 }

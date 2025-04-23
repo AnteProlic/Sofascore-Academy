@@ -10,8 +10,9 @@ export interface Pokemon {
     height: number
     weight: number
     types: pokemonType[]
-    img_url: string
-    front_url: string
-    back_url: string
+    img_url: string[]
+    front_url: string[]
+    back_url: string[]
     details: string
+    favorite: boolean
 }

@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react"
 import { Flex } from "../styled-system/jsx"
 import { styled } from "../styled-system/jsx"
-import Card from "./components/Card"
+import PokemonCard from "./components/PokemonCard"
 import { getMultiple, getPokemon } from "./routes"
+import Favorites from "./components/Favorites"
+import { Pokemon } from "./interface"
 
 const FIRST_N: number = 4
 
 function App() {
   const [pokemons, setPokemons] = useState<string[]>([])
+  const [favorites, setFavorites] = useState<Pokemon[]>([])
   const [count, setCount] = useState<number>(FIRST_N)
   const [loading, setLoading] = useState<boolean>(true)
+  const [open, setOpen] = useState<boolean>(false)
 
   useEffect(() => {
     if (loading === true) {
@@ -44,11 +48,18 @@ function App() {
 
 
   return (
-    <Flex direction="column" fontFamily="'Poppins', sans-serif">
+    <Flex direction="column" fontFamily="'Poppins', sans-serif" >
+      <Favorites 
+      isOpen={open}
+      onClose={() => setOpen(false)}
+      pokemons={favorites}
+      addFavorite={(e: Pokemon) => setFavorites(favorites => [...favorites, e])} 
+      removeFavorite={(e: string) => setFavorites(favorites => favorites.filter(fav => fav.name !== e))} 
+      ></Favorites>
       <Flex 
       h={{ base: "3xl", lg: "s1" }}
       w="100%"
-      background="background.header" 
+      background="background.primary" 
       position="sticky" 
       top="0" 
       justifyContent="space-between" 
@@ -60,10 +71,15 @@ function App() {
         h={{ base: "lg", sm: "xl"}} 
         scale="fit" 
         cursor={{_hover: "pointer"}}
-        animationDirection="reverse"
+        animationDirection="alternate"
         animation={{_hover: "grow 0.6s infinite"}}
+        onClick={() => setOpen(true)}
         />
-        <Flex color="text.header" textStyle={{ base: "display.small", sm: "display.medium" }} justifyContent="center" alignItems="center" h={{ base: "lg", sm: "xl" }}>
+        <Flex 
+        color="text.primary" 
+        textStyle={{ base: "display.small", sm: "display.medium" }} 
+        justifyContent="center" alignItems="center" 
+        h={{ base: "lg", sm: "xl" }}>
           <styled.img src={`src/images/poke-ball.png`} h={{ base: "lg", sm: "xl" }} scale="fit"/>
           POKEDEX
         </Flex>
@@ -76,7 +92,10 @@ function App() {
       </Flex>
       <Flex direction="column">
         {pokemons.map((name: string, index: number) => {
-          return <Card key={name} name={name} index={index}/>
+          return <PokemonCard key={name} name={name} index={index} 
+          addFavorite={(e: Pokemon) => setFavorites(favorites => [...favorites, e])} 
+          removeFavorite={(e: string) => setFavorites(favorites => favorites.filter(fav => fav.name !== e))} 
+          />
         })}
       </Flex>
     </Flex>

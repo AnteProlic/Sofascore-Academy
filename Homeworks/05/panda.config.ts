@@ -39,15 +39,15 @@ export default defineConfig({
             dragon: { value: "#7038F8" },
             rock: { value: "#B8A038" }
           },
-        },
+        }
       },
     },
     breakpoints,
     tokens,
     textStyles,
     semanticTokens: {
-      colors,
-    },
+      colors
+    }
   },
 
   conditions: {

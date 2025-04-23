@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Flex, styled } from "../../../styled-system/jsx"
 import { Pokemon } from "../../interface"
 
-const emptyHeartUrl: string = "src/images/heart.png"
+const emptyHeartUrl: string = "src/images/heart_red.png"
 const redHeartUrl: string = "src/images/heart_red_filled.png"
 
 function FavoriteCard({pokemon, add, remove}: {pokemon: Pokemon, add: Function, remove: Function}) {
@@ -13,6 +13,7 @@ function FavoriteCard({pokemon, add, remove}: {pokemon: Pokemon, add: Function, 
     direction="column"
     padding="sm"
     textStyle={{ base: "display.large", sm: "display.medium", md: "display.large" }} 
+    color="text.default"
     w={{ base: "80%", sm: "33%", md: "25%", lg: "20%" }} 
     h={{ base: "80%", sm: "33%", md: "25%", lg: "20%" }} >
         <Flex 
@@ -29,7 +30,7 @@ function FavoriteCard({pokemon, add, remove}: {pokemon: Pokemon, add: Function, 
             h="xl"
             margin={{ base: "md", sm: "sm", lg: "lg" }}
             cursor={{_hover: "pointer"}}
-            bgImage={{base: `url(${url})`}}
+            style={{ backgroundImage: `url("${url}")` }}
             backgroundSize="cover"
             onClick={() => {
                 pokemon.favorite = !pokemon.favorite

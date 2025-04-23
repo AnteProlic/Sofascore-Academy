@@ -137,7 +137,7 @@ function PokemonCard({ name, index, addFavorite, removeFavorite }:
               h={{ base: "xl", lg: "2xl" }}
               margin={{ base: "md", sm: "sm", lg: "lg" }}
               cursor={{_hover: "pointer"}}
-              bgImage={{base: `url(${whiteHeartUrl})`}}
+              bgImage={{base: `url(${url})`}}
               backgroundSize="cover"
               onClick={() => {
                 if (!pokemon.favorite) {

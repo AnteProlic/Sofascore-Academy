@@ -48,7 +48,7 @@ function App() {
 
 
   return (
-    <Flex direction="column" fontFamily="'Poppins', sans-serif" >
+    <Flex direction="column" fontFamily="'Poppins', sans-serif" data-theme="dark">
       <Favorites 
       isOpen={open}
       onClose={() => setOpen(false)}

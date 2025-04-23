@@ -35,7 +35,7 @@ function Favorites({isOpen=false, onClose, pokemons=[], addFavorite, removeFavor
             position: "absolute"
         }
         }}>
-        <Flex direction="column">
+        <Flex direction="column" data-theme="dark">
             <Grid
             position="sticky"
             top="0"

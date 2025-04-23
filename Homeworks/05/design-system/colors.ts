@@ -8,7 +8,7 @@ export const colors: SemanticTokens["colors"] = {
     details: { value: { base: "#FFFFFF", _dark: "#1F2735" } },
   },
   text: {
-    default: { value: { base: "#262626", _dark: "#ACACAC" } },
+    default: { value: { base: "#262626", _dark: "#FFFFFF" } },
     primary: { value: { base: "#FFFFFF", _dark: "#FFFFFF" } },
     type: {value: {base: "#000000", _dark: "#000000"}}
   },

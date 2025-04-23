@@ -14,6 +14,8 @@ function App() {
   const [count, setCount] = useState<number>(FIRST_N)
   const [loading, setLoading] = useState<boolean>(true)
   const [open, setOpen] = useState<boolean>(false)
+  const [theme, setTheme] = useState<"base"|"dark">("base")
+  const [themeBox, setThemeBox] = useState<"none"|"flex">("none")
 
   useEffect(() => {
     if (loading === true) {
@@ -48,8 +50,9 @@ function App() {
 
 
   return (
-    <Flex direction="column" fontFamily="'Poppins', sans-serif" data-theme="dark">
+    <Flex direction="column" fontFamily="'Poppins', sans-serif" data-theme={theme}>
       <Favorites 
+      theme={theme}
       isOpen={open}
       onClose={() => setOpen(false)}
       pokemons={favorites}
@@ -88,9 +91,36 @@ function App() {
         scale="fit"
         animation={{_hover: "spin 2s linear infinite"}}
         cursor={{_hover: "pointer"}}
+        onClick={() => setThemeBox(themeBox === "none"? "flex": "none")}
         />
       </Flex>
       <Flex direction="column">
+        <Flex
+        display={themeBox}
+        color="text.default"
+        direction="column"
+        position="fixed"
+        right="0"
+        top={{ base: "3xl", lg: "s1" }}
+        margin="md"
+        justifyContent="center"
+        zIndex="1"
+        bg="background.details"
+        border="solid"
+        h="100px"
+        w="200px"
+        borderRadius="md"
+        onChange={e => setTheme(e.target.value)}>
+          <styled.span marginLeft="sm">Theme:</styled.span>
+          <Flex alignItems="center" h="2xl">
+            <styled.input type="radio" value="base" name="theme" margin="sm" defaultChecked/>
+            <styled.label>Light</styled.label>
+          </Flex>
+          <Flex alignItems="center" h="2xl">
+            <styled.input type="radio" value="dark" name="theme" margin="sm"/>
+            <styled.label>Dark</styled.label>
+          </Flex>
+        </Flex>
         {pokemons.map((name: string, index: number) => {
           return <PokemonCard key={name} name={name} index={index} 
           addFavorite={(e: Pokemon) => setFavorites(favorites => [...favorites, e])} 

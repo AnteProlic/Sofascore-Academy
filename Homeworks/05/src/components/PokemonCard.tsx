@@ -5,7 +5,7 @@ import { getPokemon, getSpecies } from "../routes"
 import Type from "./components/Type"
 
 const loadingUrl: string = "src/images/poke-ball_loading.gif"
-const whiteHeartUrl: string = "src/images/heart_white.png"
+const whiteHeartUrl: string = "src/images/heart_red.png"
 const redHeartUrl: string = "src/images/heart_red_filled.png"
 
 function output(num: number | undefined): string {
@@ -113,7 +113,9 @@ function PokemonCard({ name, index, addFavorite, removeFavorite }:
   }, [])
 
     return (
-        <Flex direction={{base: "column-reverse", sm: index%2==0?"row-reverse":"row"}}>
+        <Flex 
+        direction={{base: "column-reverse", sm: index%2==0?"row-reverse":"row"}}
+        color="text.default">
 
             <Flex 
             background="background.image" 
@@ -137,7 +139,7 @@ function PokemonCard({ name, index, addFavorite, removeFavorite }:
               h={{ base: "xl", lg: "2xl" }}
               margin={{ base: "md", sm: "sm", lg: "lg" }}
               cursor={{_hover: "pointer"}}
-              bgImage={{base: `url(${url})`}}
+              style={{ backgroundImage: `url("${url}")` }}
               backgroundSize="cover"
               onClick={() => {
                 if (!pokemon.favorite) {
@@ -167,6 +169,7 @@ function PokemonCard({ name, index, addFavorite, removeFavorite }:
 
             <Flex 
             direction="column" 
+            bg="background.details"
             justifyContent="center" 
             w={{ base: "100%", sm: "50%"}}
             h={{ base: "s9", lg: "s11" }}

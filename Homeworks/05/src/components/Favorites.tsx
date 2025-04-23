@@ -8,8 +8,8 @@ const arrowUrl: string = "src/images/left-arrow.png"
 
 Modal.setAppElement("#root")
 
-function Favorites({isOpen=false, onClose, pokemons=[], addFavorite, removeFavorite}: 
-    {isOpen: boolean, onClose: () => void, pokemons: Pokemon[], addFavorite: Function, removeFavorite: Function}) {
+function Favorites({isOpen=false, onClose, pokemons=[], addFavorite, removeFavorite, theme="base"}: 
+    {isOpen: boolean, onClose: () => void, pokemons: Pokemon[], addFavorite: Function, removeFavorite: Function, theme: string}) {
     
     const [favs, setFavs] = useState<Pokemon[]>([])
 
@@ -35,7 +35,7 @@ function Favorites({isOpen=false, onClose, pokemons=[], addFavorite, removeFavor
             position: "absolute"
         }
         }}>
-        <Flex direction="column" data-theme="dark">
+        <Flex direction="column" data-theme={theme}>
             <Grid
             position="sticky"
             top="0"

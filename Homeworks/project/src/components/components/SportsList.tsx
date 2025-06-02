@@ -6,7 +6,7 @@ import { Sport, SportsResponse } from "../../model/interface"
 
 export const SportsList = () => {
     const width = 56;
-    const { data, isLoading, error } = useSWR<SportsResponse>("https://academy-backend.sofascore.dev/sports")
+    const { data, isLoading, error } = useSWR<SportsResponse>("/api/sports")
     console.log(data)
 
     return <Flex 

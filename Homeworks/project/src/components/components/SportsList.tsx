@@ -6,6 +6,11 @@ import { SportIcon } from "./components/Sport";
 
 export const SportsList = () => {
     const width = 56;
+<<<<<<< HEAD
+=======
+    const { data, isLoading, error } = useSWR<SportsResponse>("/api/sports")
+    console.log(data)
+>>>>>>> fc0b86879e2f048dfad0d9ee9b53e4b3a3336a70
 
     return <SportProvider>
         {sports => (
@@ -23,6 +28,10 @@ export const SportsList = () => {
                     <SportIcon key={sport.id} slug={sport.slug}/>
                 ))}
             </Flex>
+<<<<<<< HEAD
         )}
     </SportProvider>
 }
+=======
+}
+>>>>>>> fc0b86879e2f048dfad0d9ee9b53e4b3a3336a70

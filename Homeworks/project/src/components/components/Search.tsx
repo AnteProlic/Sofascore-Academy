@@ -21,7 +21,7 @@ export const Search = () => {
         outline="none"
         paddingLeft="3xl"
         paddingY="sm"
-        color="text.default"
+        color="black"
         placeholder="Search for tournaments, clubs, players..."
         boxShadow="inset 0 0 10px #424242;"
         w="516px" />

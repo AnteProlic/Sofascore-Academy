@@ -7,6 +7,9 @@ import useSWR, { SWRConfig, unstable_serialize } from 'swr'
 import { Flex, styled } from "../../styled-system/jsx"
 
 import "./globals.css";
+import { SportContextProvider } from "@/model/SportContextProvider";
+import { TournamentList } from "@/components/components/TournamentList";
+import { Favorites } from "@/components/components/Favorites";
 
 // @ts-expect-error Default fetcher from useSWR docs
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
@@ -16,11 +19,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const margin = 12
+  const width = 56
   return (
     <html lang="en">
       <body>
         <SWRConfig value={{ fetcher }}>
-          <Sidebar />
+          <SportContextProvider>
+            <Sidebar />
+          </SportContextProvider>
           <Flex
           w={`calc(100% - ${256}px - ${56}px - ${2*24}px)`}
           float="right"

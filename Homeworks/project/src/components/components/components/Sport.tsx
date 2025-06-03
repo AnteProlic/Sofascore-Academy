@@ -1,13 +1,29 @@
-import { Flex } from "../../../../styled-system/jsx"
+import { Sport } from "@/model/interface"
+import { Flex, styled } from "../../../../styled-system/jsx"
+import { useSport } from "@/model/SportContextProvider";
 
-export const Sport = ({name}: {name: string}) => {
+export const SportIcon = ({slug}: {slug: string}) => {
+
+    const { sport, setSport } = useSport();
+
     return <Flex
     alignItems="center"
-    h="3xl"
+    h="4xl"
     paddingX="md"
     cursor={{ _hover: "pointer"}}
-    textDecoration={{ _hover: "underline" }}
+    direction="column"
+    gap="xs"
+    onClick={() => {
+        setSport(slug)
+    }}
     >
-        {name}
+        <styled.img 
+        w="100%"
+        src={`/sports/${slug}.png`} />
+        <styled.span
+        textAlign="center"
+        color="text.default"
+        textStyle="body.small"
+        >{slug}</styled.span>
     </Flex>
 }

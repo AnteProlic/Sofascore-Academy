@@ -9,7 +9,6 @@ import { Sport } from "@/model/interface";
 export const SportsList = () => {
     const width = 56;
     const { data, isLoading, error } = useSWR<Sport>("/api/sports")
-    console.log(data)
 
     return <SportProvider>
         {sports => (

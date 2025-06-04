@@ -7,9 +7,8 @@ import { EventCard } from "@/components/EventCard"
 export const EventsList = ({id, span, page}: {id: number, span: "last"|"next", page: number}) => {
   return (
     <div>
-      
       <TournamentProvider id={Number(id)}>
-        {tournament => (<div>{tournament.name}</div>)}
+        {tournament => (<div>{tournament.name}, {tournament.sport.name}, {tournament.country.name}</div>)}
       </TournamentProvider>
       <TournamentEventProvider id={id} span={span} page={page}>
         {(events) => (

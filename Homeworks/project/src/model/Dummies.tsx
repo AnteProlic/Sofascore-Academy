@@ -1,4 +1,4 @@
-import { Tournament, Event, Team, Country, Score, EventStatus, Player } from "./interface";
+import { Tournament, Event, Team, Country, Score, EventStatus, Player, Standing, StandingsType } from "./interface";
 
 export const dummyTournament: Tournament = {
   id: 0,
@@ -50,4 +50,11 @@ export const dummyPlayer: Player = {
   slug: "...",
   country: dummyCountry,
   position: "..."
+}
+
+export const dummyStanding: Standing = {
+  id: 0,
+  tournament: dummyTournament,
+  type: StandingsType.total,
+  sortedStandingsRows: []
 }

@@ -1,10 +1,10 @@
 "use client"
 
 import useSWR from "swr"
-import { Tournament, Event } from "./interface"
-import { dummyTournament } from "./Dummies"
+import { Tournament, Event, Standing } from "./interface"
+import { dummyStanding, dummyTournament } from "./Dummies"
 
-interface TournamentProvider {
+interface TournamentProviderProps {
   id: number
   children: (
     tournament: Tournament,
@@ -33,7 +33,16 @@ interface TournamentEventProviderProps {
   ) => React.ReactNode
 }
 
-export const TournamentProvider = ({ id, children }: TournamentProvider) => {
+interface TournamentStandingsProviderProps {
+  id: number
+  children: (
+    standings: Standing[],
+    isLoading: boolean,
+    error: Error | null
+  ) => React.ReactNode
+}
+
+export const TournamentProvider = ({ id, children }: TournamentProviderProps) => {
   const { data, isLoading, error } = useSWR<Tournament>(`/api/tournament/${id}`)
 
   return children(data || dummyTournament, isLoading, error)
@@ -47,6 +56,12 @@ export const AllTournamentsProvider = ({ slug, children }: AllTournamentsProvide
 
 export const TournamentEventProvider = ({ id, span, page, children}: TournamentEventProviderProps) => {
   const { data, isLoading, error } = useSWR<Event[]>(`/api/tournament/${id}/events/${span}/${page}`)
+  console.log(data)
+  return children(data || [], isLoading, error)
+}
+
+export const TournamentStandingsProvider = ({ id, children }: TournamentStandingsProviderProps) => {
+  const { data, isLoading, error } = useSWR<Standing[]>(`/api/tournament/${id}/standings`)
   console.log(data)
   return children(data || [], isLoading, error)
 }

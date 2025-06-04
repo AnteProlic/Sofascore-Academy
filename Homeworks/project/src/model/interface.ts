@@ -50,6 +50,12 @@ export enum GoalType {
   extraPoint="extrapoint"
 }
 
+export enum StandingsType {
+  total="total",
+  home="home",
+  away="away"
+}
+
 export interface Score {
   total: number
   period1?: number
@@ -137,4 +143,24 @@ export interface Goal extends Incident {
 
 export interface Period extends Incident {
   text: string
+}
+
+export interface StandingRow {
+  id: number,
+  team: Team,
+  points?: number,
+  scoresFor: number,
+  scoresAgainst: number,
+  played: number,
+  wins: number,
+  draws: number,
+  losses: number,
+  percentage?: number
+}
+
+export interface Standing {
+  id: number,
+  tournament: Tournament,
+  type: StandingsType,
+  sortedStandingsRows: StandingRow[]
 }

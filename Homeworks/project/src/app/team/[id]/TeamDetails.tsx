@@ -1,7 +1,8 @@
 "use client"
 
-import { TeamPlayersProvider, TeamProvider } from "@/model/TeamProvider"
+import { TeamEventsProvider, TeamPlayersProvider, TeamProvider, TeamTournametsProvider } from "@/model/TeamProvider"
 import { Flex, styled } from "../../../../styled-system/jsx"
+import { Span } from "@/model/interface"
 
 export const TeamDetails = ({id}: {id: number}) => {
     return <TeamProvider id={id}>
@@ -20,6 +21,27 @@ export const TeamDetails = ({id}: {id: number}) => {
                     {players.map(player => <div key={player.id}>{player.name}</div>)}
                 </Flex>}
             </TeamPlayersProvider>
+            <TeamEventsProvider id={id} span={Span.last} page={1}>
+                {events => (<Flex direction="column">
+                    <br />
+                    <div>Events:</div>
+                    {events.map(event => (
+                        // @ts-ignore
+                        <div key={event.id}>{event.slug}</div>
+                    ))}
+                    </Flex>
+                )}
+            </TeamEventsProvider>
+            <TeamTournametsProvider id={id}>
+                {tournaments => (<Flex direction="column">
+                    <br />
+                    <div>Tournaments:</div>
+                    {tournaments.map(tournament => (
+                        <div key={tournament.id}>{tournament.slug}</div>
+                    ))}
+                    </Flex>
+                )}
+            </TeamTournametsProvider>
         </Flex>}
     </TeamProvider>
 }

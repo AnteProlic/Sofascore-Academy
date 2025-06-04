@@ -1,6 +1,6 @@
 export enum EventStatus {
-  notstarted="notstarted",
-  inprogress="inprogress",
+  notStarted="notstarted",
+  inProgress="inprogress",
   finished="finished"
 }
 
@@ -13,6 +13,41 @@ export enum EventWinnerCode {
 export enum Span {
   last="last",
   next="next"
+}
+
+export enum CardTeamSide {
+  home="home",
+  away="away"
+}
+
+export enum GoalScoringTeam {
+  home="home",
+  away="away"
+}
+
+export enum CardColor {
+  yellow="yellow",
+  yellowRed="yellowred",
+  red="red"
+}
+
+export enum IncidentType {
+  card="card",
+  goal="goal",
+  period="period"
+}
+
+export enum GoalType {
+  regular="regular",
+  ownGoal="owngoal",
+  penalty="penalty",
+  onePoint="onepoint",
+  twoPoint="twopoint",
+  threePoint="threepoint",
+  touchdown="touchdown",
+  safety="safety",
+  fieldGoal="fieldgoal",
+  extraPoint="extrapoint"
 }
 
 export interface Score {
@@ -78,4 +113,28 @@ export interface Player {
   slug: string,
   country: Country,
   position: string
+}
+
+export interface Incident {
+  id: number,
+  time: number,
+  type: IncidentType
+}
+
+export interface Card extends Incident{
+  player: Player,
+  teamSide: CardTeamSide,
+  color: CardColor,
+}
+
+export interface Goal extends Incident {
+  player: Player,
+  scoringTeam: GoalScoringTeam,
+  homeScore: number,
+  awayScore: number
+  goalType: GoalType,
+}
+
+export interface Period extends Incident {
+  text: string
 }

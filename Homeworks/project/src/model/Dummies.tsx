@@ -33,19 +33,19 @@ export const dummyScore: Score = {
 }
 
 export const dummyEvent: Event = {
-    id: NaN,
-    slug: "...",
-    tournament: dummyTournament,
-    homeTeam: dummyTeam,
-    awayTeam: dummyTeam,
-    status: EventStatus.notstarted,
-    homeScore: dummyScore,
-    awayScore: dummyScore,
-    round: 0
+    id: 0,
+  slug: "...",
+  tournament: dummyTournament,
+  homeTeam: dummyTeam,
+  awayTeam: dummyTeam,
+  status: EventStatus.notStarted,
+  homeScore: dummyScore,
+  awayScore: dummyScore,
+  round: 0
 }
 
 export const dummyPlayer: Player = {
-  id: NaN,
+  id: 0,
   name: "...",
   slug: "...",
   country: dummyCountry,

@@ -15,6 +15,8 @@ export const TeamDetails = ({id}: {id: number}) => {
             src={`https://academy-backend.sofascore.dev/team/${id}/image`} />
             <TeamPlayersProvider id={id}>
                 {players => <Flex direction="column">
+                    <br />
+                    <div>PLAYERS: </div>
                     {players.map(player => <div key={player.id}>{player.name}</div>)}
                 </Flex>}
             </TeamPlayersProvider>

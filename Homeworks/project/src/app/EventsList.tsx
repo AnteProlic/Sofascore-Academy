@@ -19,10 +19,12 @@ export const EventsList = () => {
                             {tournaments.map(tournament => (
                                 <TournamentEventProvider key={tournament.id} id={tournament.id} span={Span.last} page={1}>
                                 {(events) => (
-                                    <Flex direction="column">
+                                    <Flex 
+                                    direction="column"
+                                    gap="sm">
                                     TOURNAMENT: {tournament.name}
                                     {events.map(event => (
-                                        <EventCard event={event}/>
+                                        <EventCard key={event.id} event={event}/>
                                     ))}
                                     </Flex>
                                 )}

@@ -35,7 +35,7 @@ export default function RootLayout({
           direction="column">
             <Navbar />
             <Flex 
-            direction="column" bg="background.primary"
+            direction="column"
             borderRadius="md"
             marginTop="md"
             w="100%">

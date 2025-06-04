@@ -26,8 +26,7 @@ export default function RootLayout({
       <body>
         <SWRConfig value={{ fetcher }}>
           <SportContextProvider>
-            <Sidebar />
-          </SportContextProvider>
+          <Sidebar />
           <Flex
           w={`calc(100% - ${256}px - ${56}px - ${2*24}px)`}
           float="right"
@@ -43,6 +42,7 @@ export default function RootLayout({
               {children}
             </Flex>
           </Flex>
+          </SportContextProvider>
         </SWRConfig>
       </body>
     </html>

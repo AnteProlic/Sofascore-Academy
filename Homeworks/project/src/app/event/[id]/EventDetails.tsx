@@ -1,12 +1,8 @@
 "use client"
-
-import { AllTournamentsProvider, TournamentEventProvider } from "@/model/TournamentProvider"
 import { Flex } from "../../../../styled-system/jsx"
-import { EventCard } from "@/components/EventCard"
-import { Span } from "@/model/interface"
 import { EventDetailsProvider } from "@/model/EventProvider"
 
-export const EventPage = ({id}: {id: number}) => {
+export const EventDetails = ({id}: {id: number}) => {
   return (
     <EventDetailsProvider id={id}>
             {event => (

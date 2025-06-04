@@ -1,4 +1,4 @@
-import { Tournament, Event, Team, Country, Score, EventStatus } from "./interface";
+import { Tournament, Event, Team, Country, Score, EventStatus, Player } from "./interface";
 
 export const dummyTournament: Tournament = {
   id: 0,
@@ -42,4 +42,12 @@ export const dummyEvent: Event = {
     homeScore: dummyScore,
     awayScore: dummyScore,
     round: 0
+}
+
+export const dummyPlayer: Player = {
+  id: NaN,
+  name: "...",
+  slug: "...",
+  country: dummyCountry,
+  position: "..."
 }

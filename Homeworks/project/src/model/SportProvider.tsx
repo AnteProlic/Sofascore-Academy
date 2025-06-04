@@ -12,7 +12,7 @@ interface SportProviderProps {
 }
 
 export const SportProvider = ({ children }: SportProviderProps) => {
-    const { data, isLoading, error } = useSWR<Sport[]>("/api/sports")
+    const { data, isLoading, error } = useSWR<Sport[]>(`/api/sports`)
 
     return children(data || [], isLoading, error)
 }

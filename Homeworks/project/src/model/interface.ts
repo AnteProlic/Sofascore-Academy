@@ -71,3 +71,11 @@ export interface Event {
   winnerCode?: EventWinnerCode | null,
   round: number
 }
+
+export interface Player {
+  id: number,
+  name: string,
+  slug: string,
+  country: Country,
+  position: string
+}

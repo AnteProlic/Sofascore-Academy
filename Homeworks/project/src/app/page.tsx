@@ -1,16 +1,11 @@
-import { Flex, styled } from "../../styled-system/jsx"
+import { Flex } from "../../styled-system/jsx"
+import { redirect } from "next/navigation";
+import { EventsList } from "./EventsList";
 
 export default function Home() {
   return (
     <Flex direction="column">
-      <Flex>HIIIIIIIIIIIIIII</Flex>
-      <Flex>HIIIIIIIIIIIIIII</Flex>
-      <Flex>HIIIIIIIIIIIIIII</Flex>
-      <Flex>HIIIIIIIIIIIIIII</Flex>
-      <Flex>HIIIIIIIIIIIIIII</Flex>
-      <Flex>HIIIIIIIIIIIIIII</Flex>
-      <Flex>HIIIIIIIIIIIIIII</Flex>
-      
+      <EventsList />
     </Flex>
   );
 }

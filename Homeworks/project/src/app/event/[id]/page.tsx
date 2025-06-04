@@ -1,6 +1,6 @@
 import { TournamentEventProvider } from "@/model/TournamentProvider"
 import { Flex } from "../../../../styled-system/jsx"
-import { EventPage } from "./EventPage"
+import { EventDetails } from "./EventDetails"
 
 export default async function Sport ({
   params,
@@ -8,5 +8,5 @@ export default async function Sport ({
   params: Promise<{ id: string }>
 }) {
     const { id } = await params
-    return <EventPage id={Number(id)}/>
+    return <EventDetails id={Number(id)}/>
 }

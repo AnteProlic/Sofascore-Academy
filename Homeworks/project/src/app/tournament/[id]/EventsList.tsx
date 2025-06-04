@@ -15,7 +15,7 @@ export const EventsList = ({id, span, page}: {id: number, span: "last"|"next", p
         {(events) => (
           <Flex direction="column">
             {events.map(event => (
-              <EventCard key={event.slug} event={event}/>
+              <EventCard key={event.id} event={event}/>
             ))}
           </Flex>
         )}

@@ -12,15 +12,13 @@ export const EventDetails = ({id}: {id: number}) => {
               const {year, month, day, hour, min} = parseTime(event.startDate ?? "")
               return (
                 <Flex
-                direction="column"
-                alignItems="center">
-                  <div>{day}.{month}.{year}. | {hour}:{min} | {event.tournament.name}</div>
+                direction="column">
+                  <styled.div paddingLeft="xs">{day}.{month}.{year}. | {hour}:{min} | {event.tournament.name}</styled.div>
                   <Flex 
                   direction="column"
                   alignItems="center"
-                  w="100%"
-                  marginBottom="4xl">
-                    <Flex alignItems="center" textStyle="display.large">
+                  w="100%">
+                    <Flex alignItems="center" textStyle="display.large" marginBottom="3xl">
                       <TeamCard team={event.homeTeam}/>
                       <Flex direction="column" alignItems="center" gap="md">
                         <styled.span textStyle="display.extraLarge" textAlign="center" w="128px">{event.homeScore.total} : {event.awayScore.total}</styled.span>
@@ -28,14 +26,14 @@ export const EventDetails = ({id}: {id: number}) => {
                       </Flex>
                       <TeamCard team={event.awayTeam}/>
                     </Flex>
+                    <EventIncidentProvider id={id}>
+                      {incidents => <Flex direction="column">
+                        {incidents.map(incident => (<Flex direction="column" key={incident.id} width={`calc(${516}px + ${128}px)`}>
+                          <IncidentCard incident={incident}/>
+                        </Flex>))}
+                      </Flex>}
+                    </EventIncidentProvider>
                   </Flex>
-                  <EventIncidentProvider id={id}>
-                    {incidents => <Flex direction="column">
-                      {incidents.map(incident => (<Flex direction="column" key={incident.id} width={`calc(${516}px + ${128}px)`}>
-                        <IncidentCard incident={incident}/>
-                      </Flex>))}
-                    </Flex>}
-                  </EventIncidentProvider>
                 </Flex>
             )}}
         </EventDetailsProvider>

@@ -21,7 +21,7 @@ export const EventsList = () => {
                                 {(events) => (
                                     <Flex 
                                     direction="column"
-                                    gap="sm">
+                                    gap="xs">
                                     TOURNAMENT: {tournament.name}
                                     {events.map(event => (
                                         <EventCard key={event.id} event={event}/>

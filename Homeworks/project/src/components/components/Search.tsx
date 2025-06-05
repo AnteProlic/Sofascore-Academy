@@ -5,7 +5,8 @@ export const Search = () => {
     return <Flex
     alignItems="center"
     justifyContent="center"
-    marginLeft="xl">
+    marginX="xl"
+    h="5xl">
 
         <styled.img 
         src="/search.png"

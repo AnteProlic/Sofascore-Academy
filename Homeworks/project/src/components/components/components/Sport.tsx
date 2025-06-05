@@ -1,10 +1,6 @@
-import { Sport } from "@/model/interface"
 import { Flex, styled } from "../../../../styled-system/jsx"
-import { useSport } from "@/model/SportContextProvider";
 
 export const SportIcon = ({slug}: {slug: string}) => {
-
-    const { sport, setSport } = useSport();
 
     return <Flex
     alignItems="center"
@@ -13,9 +9,6 @@ export const SportIcon = ({slug}: {slug: string}) => {
     cursor={{ _hover: "pointer"}}
     direction="column"
     gap="xs"
-    onClick={() => {
-        setSport(slug)
-    }}
     >
         <styled.img 
         w="100%"

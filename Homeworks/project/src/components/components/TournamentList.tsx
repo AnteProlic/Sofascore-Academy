@@ -1,10 +1,10 @@
+"use client"
+
 import { AllTournamentsProvider } from "@/model/TournamentProvider"
 import { Flex, styled } from "../../../styled-system/jsx"
-import { useSport } from "@/model/SportContextProvider"
 import { TournamentElement } from "./components/TournamentElement";
 
-export const TournamentList = () => {
-    const { sport } = useSport();
+export const TournamentList = ({sport}: {sport: string}) => {
 
     return <Flex 
     direction="column"

@@ -1,15 +1,14 @@
 "use client"
 
 import type { Metadata } from "next";
-import { Sidebar } from "@/components/Sidebar";
 import { Navbar } from "@/components/Navbar";
 import useSWR, { SWRConfig, unstable_serialize } from 'swr'
 import { Flex, styled } from "../../styled-system/jsx"
 
 import "./globals.css";
-import { SportContextProvider } from "@/model/SportContextProvider";
 import { TournamentList } from "@/components/components/TournamentList";
 import { Favorites } from "@/components/components/Favorites";
+import { SportsList } from "@/components/SportsList";
 
 // @ts-expect-error Default fetcher from useSWR docs
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
@@ -19,30 +18,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const margin = 12
-  const width = 56
   return (
     <html lang="en">
       <body>
         <SWRConfig value={{ fetcher }}>
-          <SportContextProvider>
-          <Sidebar />
+          <Navbar />
+          <SportsList />
           <Flex
-          w={`calc(100% - ${256}px - ${56}px - ${2*24}px)`}
+          direction="column"
+          h="50vh"
+          w={`calc(100% - 56px - 36px)`}
           float="right"
-          margin="md"
-          borderRadius="md"
-          direction="column">
-            <Navbar />
-            <Flex 
-            direction="column"
-            borderRadius="md"
-            marginTop="md"
-            w="100%">
-              {children}
-            </Flex>
+          marginX="md"
+          marginTop="64px"
+          padding="md">
+            {children}
           </Flex>
-          </SportContextProvider>
         </SWRConfig>
       </body>
     </html>

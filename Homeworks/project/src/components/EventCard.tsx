@@ -12,7 +12,8 @@ export const EventCard = ({event}: {event: Event}) => {
     color="text.default"
     p="sm"
     w="100%"
-    alignItems="center">
+    alignItems="center"
+    justifyContent="space-between">
         <Flex direction="column">
             <EventScore team={event.homeTeam} score={event.homeScore.total}/>
             <EventScore team={event.awayTeam} score={event.awayScore.total}/>

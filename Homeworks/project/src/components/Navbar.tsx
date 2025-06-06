@@ -16,8 +16,18 @@ export const Navbar = () => {
         bg="background.tertiary"
         w={`calc(100% - 92px)`}
         borderRadius="md"
-        justifyContent="center">
+        justifyContent="space-between"
+        align="stretch">
+            <Flex h="100%" w="256px" alignItems="center" marginX="md">
+                <styled.span color="text.default" fontSize="24px">THIS-IS-APP-TITLE!</styled.span>
+            </Flex>
             <Search />
+            <Flex 
+            h="100%" w="256px" 
+            alignItems="center" justifyContent="flex-end" 
+            marginX="md">
+                <styled.img h="2xl" src="/settings.png" cursor={{_hover: "pointer"}}/>
+            </Flex>
         </Flex>
     </Flex>
 }

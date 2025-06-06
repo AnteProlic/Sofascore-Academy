@@ -25,9 +25,9 @@ export default async function SportLayout({
             borderRadius="md"
             gap="lg">
                 <TournamentList sport={slug}/>
-                <Favorites title="tournaments">empty...</Favorites>
-                <Favorites title="teams">empty...</Favorites>
-                <Favorites title="players">empty...</Favorites>
+                <Favorites title="tournaments">(not deployed)</Favorites>
+                <Favorites title="teams">(not deployed)</Favorites>
+                <Favorites title="players">(not deployed)</Favorites>
             </Flex>
             <Flex
             marginLeft="256px"

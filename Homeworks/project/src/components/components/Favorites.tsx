@@ -19,7 +19,7 @@ export const Favorites = ({title, children}: FavoriteProps) => {
         p="sm"
         textStyle="display.large"
         >Favorite {title}:</styled.span>
-        <Flex direction="column">
+        <Flex direction="column" paddingX="md">
             {children}
         </Flex>
     </Flex>

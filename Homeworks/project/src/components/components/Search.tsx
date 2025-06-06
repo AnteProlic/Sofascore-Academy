@@ -27,5 +27,12 @@ export const Search = () => {
         boxShadow="inset 0 0 10px #424242;"
         w="516px" />
 
+        <styled.img 
+        src="/calendar.png"
+        marginLeft="-2xl"
+        h="xl"
+        cursor={{ _hover: "pointer"}}
+        zIndex="1"/>
+
     </Flex>
 }

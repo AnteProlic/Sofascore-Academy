@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { styled } from "../../styled-system/jsx"
 
 export const SafeImage = ({ src, placeholder, alt }: { src: string, placeholder: string, alt: string }) => {

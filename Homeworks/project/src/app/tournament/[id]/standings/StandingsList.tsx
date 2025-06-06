@@ -3,6 +3,7 @@
 import { AllTournamentsProvider, TournamentEventProvider, TournamentProvider, TournamentStandingsProvider } from "@/model/TournamentProvider"
 import { Flex } from "../../../../../styled-system/jsx"
 import { EventCard } from "@/components/EventCard"
+import { TeamStanding } from "./components/TeamStanding"
 
 export const StandingsList = ({id}: {id: number}) => {
   return (
@@ -17,8 +18,8 @@ export const StandingsList = ({id}: {id: number}) => {
               <Flex direction="column" key={standing.id}>
                 ID: {standing.id}
                 <Flex direction="column">
-                  {standing.sortedStandingsRows.map(row => (
-                    <div key={row.id}>{row.team.name}</div>
+                  {standing.sortedStandingsRows.map((row, index)=> (
+                    <TeamStanding key={row.id} index={index+1} row={row} />
                   ))}
                 </Flex>
               </Flex>

@@ -56,12 +56,12 @@ export const AllTournamentsProvider = ({ slug, children }: AllTournamentsProvide
 
 export const TournamentEventProvider = ({ id, span, page, children}: TournamentEventProviderProps) => {
   const { data, isLoading, error } = useSWR<Event[]>(`/api/tournament/${id}/events/${span}/${page}`)
-  console.log(data)
+  
   return children(data || [], isLoading, error)
 }
 
 export const TournamentStandingsProvider = ({ id, children }: TournamentStandingsProviderProps) => {
   const { data, isLoading, error } = useSWR<Standing[]>(`/api/tournament/${id}/standings`)
-  console.log(data)
+
   return children(data || [], isLoading, error)
 }

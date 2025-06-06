@@ -1,24 +1,27 @@
 "use client"
 
 import { AllTournamentsProvider, TournamentEventProvider, TournamentProvider } from "@/model/TournamentProvider"
-import { Flex } from "../../../../styled-system/jsx"
+import { Flex, styled } from "../../../../styled-system/jsx"
 import { EventCard } from "@/components/EventCard"
 
 export const EventsList = ({id, span, page}: {id: number, span: "last"|"next", page: number}) => {
   return (
-    <div>
+    <Flex direction="column" gap="sm">
       <TournamentProvider id={Number(id)}>
-        {tournament => (<div>{tournament.name}, {tournament.sport.name}, {tournament.country.name}</div>)}
+        {tournament => (<Flex alignItems="center">
+            <styled.img w="3xl" src={`https://academy-backend.sofascore.dev/tournament/${tournament.id}/image`} />
+            <styled.span textStyle="display.extraLarge">{tournament.name}, {tournament.country.name}</styled.span>
+          </Flex>)}
       </TournamentProvider>
       <TournamentEventProvider id={id} span={span} page={page}>
         {(events) => (
-          <Flex direction="column">
+          <Flex direction="column" gap="xs">
             {events.map(event => (
               <EventCard key={event.id} event={event}/>
             ))}
           </Flex>
         )}
       </TournamentEventProvider>
-    </div>
+    </Flex>
   )
 }

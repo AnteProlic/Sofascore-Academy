@@ -1,6 +1,7 @@
+import { Sport } from "@/model/interface"
 import { Flex, styled } from "../../../../styled-system/jsx"
 
-export const SportIcon = ({slug}: {slug: string}) => {
+export const SportIcon = ({sport}: {sport: Sport}) => {
 
     return <Flex
     alignItems="center"
@@ -8,15 +9,14 @@ export const SportIcon = ({slug}: {slug: string}) => {
     paddingX="md"
     cursor={{ _hover: "pointer"}}
     direction="column"
-    gap="xs"
-    >
+    gap="xs">
         <styled.img 
         w="100%"
-        src={`/sports/${slug}.png`} />
+        src={`/sports/${sport.slug}.png`} />
         <styled.span
         textAlign="center"
         color="text.default"
         textStyle="body.small"
-        >{slug}</styled.span>
+        >{sport.name}</styled.span>
     </Flex>
 }

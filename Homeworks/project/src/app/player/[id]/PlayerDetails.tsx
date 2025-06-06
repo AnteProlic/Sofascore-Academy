@@ -4,32 +4,38 @@ import { Flex, styled } from "../../../../styled-system/jsx"
 import { EventDetailsProvider } from "@/model/EventProvider"
 import { Span, Event } from "@/model/interface"
 import { EventCard } from "@/components/EventCard"
+import { SafeImage } from "@/components/SafeImage"
 
 export const PlayerDetails = ({id}: {id: number}) => {
   return (
     <PlayerProvider id={id}>
         {player => <Flex>
-          <Flex direction="column" width="50%">
-            <styled.div bg="black" w="fit-content" p="md">
-              <styled.img w="256px" src={`https://academy-backend.sofascore.dev/player/${id}/image`}/>
+          <Flex direction="column" width="50%" h="100%" >
+            <styled.div bg="black" w={`calc(100% - 24px)`} h="auto" aspectRatio="1/1" p="md" borderRadius="md">
+              <SafeImage src={`https://academy-backend.sofascore.dev/player/${id}/image`} alt={player.slug} placeholder="/user.png"/>
+              <Flex direction="column" bg="linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);"
+               h="128px" position="relative" 
+               top="-128px" 
+               color="text.default" 
+               justifyContent="flex-end" 
+               gap="sm" 
+               paddingBottom="sm">
+                <styled.span textStyle="display.extraLarge" paddingX="md">{player.name}</styled.span>
+                <styled.span textStyle="display.medium" textTransform="uppercase" paddingX="md">{player.country.name}</styled.span>
+              </Flex>
             </styled.div>
-            <Flex direction="column">
-              <styled.span textStyle="display.extraLarge">{player.name}</styled.span>
-              <styled.span textStyle="display.large" textTransform="uppercase">{player.country.name}</styled.span>
-            <div>{player.position}</div>
-            </Flex>
           </Flex>
-            <PlayerEventsProvider id={id} span={Span.last} page={0} >
-              {events => (
-                <Flex direction="column" width="50%">
-                  <div>Events:</div>
-                  {events.map(event => (
-                    // @ts-ignore
-                    <EventCard key={event.id} event={event}/>
-                  ))}
-                </Flex>
-              )}
-            </PlayerEventsProvider>
+          <PlayerEventsProvider id={id} span={Span.last} page={0} >
+            {events => (
+              <Flex direction="column" width="50%" gap="xs">
+                <div>Events:</div>
+                {events.map(event => (
+                  // @ts-ignore
+                  <EventCard key={event.id} event={event}/>
+                ))}
+              </Flex>
+            )}
+          </PlayerEventsProvider>
         </Flex>}
     </PlayerProvider>  
   )

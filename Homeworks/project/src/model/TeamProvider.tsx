@@ -13,10 +13,15 @@ interface TeamProviderProps {
     ) => React.ReactNode
 }
 
+interface Position {
+    name: string
+    players: Player[]
+}
+
 interface TeamPlayersProviderProps {
     id: number
     children: (
-        players: Player[],
+        players: Position[],
         isLoading: boolean,
         error: Error | null
     ) => React.ReactNode
@@ -48,10 +53,38 @@ export const TeamProvider = ({ id, children }: TeamProviderProps) => {
     return children(data || dummyTeam, isLoading, error)
 }
 
-export const TeamPlayersProvider = ({ id, children }: TeamPlayersProviderProps) => {
-    const { data, isLoading, error } = useSWR<Player[]>(`/api/team/${id}/players`)
+function comparePlayers(a: Player, b: Player) {
+    if (a.position > b.position) {
+        return 1
+    } else if (a.position < b.position) {
+        return -1
+    } else {
+        if (a.slug.split("-")[1] > b.slug.split("-")[1]) {
+            return 1
+        } else {
+            return -1
+        }
+    }
+}
 
-    return children(data || [], isLoading, error)
+export const TeamPlayersProvider = ({ id, children }: TeamPlayersProviderProps) => {
+    let currPos = ""
+    const res: Position[] = []
+    const { data, isLoading, error } = useSWR<Player[]>(`/api/team/${id}/players`)
+    data?.sort(comparePlayers)
+
+    data?.forEach(player => {
+        if(player.position != currPos) {
+            res.push({
+                name: player.position,
+                players: []
+            })
+            currPos = player.position
+        }
+        res.find(pos => (pos.name == currPos))?.players.push(player)
+    })
+
+    return children(res || [], isLoading, error)
 }
 
 export const TeamEventsProvider = ({ id, span, page, children }: TeamEventsProviderProps) => {

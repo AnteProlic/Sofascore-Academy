@@ -3,6 +3,7 @@
 import { Flex, styled } from "../../styled-system/jsx"
 import { SportProvider } from "@/model/SportProvider";
 import { SportIcon } from "./components/components/SportIcon";
+import Link from "next/link";
 
 export const SportsList = () => {
     const width = 56;
@@ -19,14 +20,13 @@ export const SportsList = () => {
             borderRadius="md"
             paddingY="sm"
             gap="lg">
-                <Flex
+                <Link href="/"><Flex
                 alignItems="center"
                 h="4xl"
                 paddingX="md"
                 cursor={{ _hover: "pointer"}}
                 direction="column"
-                gap="xs"
-                >
+                gap="xs">
                     <styled.img 
                     w="100%"
                     src={`/sports/sports.png`} />
@@ -35,9 +35,11 @@ export const SportsList = () => {
                     color="text.default"
                     textStyle="body.small"
                     >All</styled.span>
-                </Flex>
+                </Flex></Link>
                 {sports.map(sport => (
-                    <SportIcon key={sport.id} slug={sport.slug}/>
+                    <Link key={sport.id} href={`/sport/${sport.slug}`}>
+                        <SportIcon sport={sport}/>
+                    </Link>
                 ))}
             </Flex>
         )}

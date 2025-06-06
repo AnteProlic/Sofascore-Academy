@@ -5,7 +5,7 @@ export const Navbar = () => {
     return <Flex 
     h="80px"
     position="fixed"
-    bg="linear-gradient(green, rgba(255, 255, 255, 0))"
+    bg="linear-gradient(black, rgba(255, 255, 255, 0))"
     w="100%"
     justifyContent="flex-end">
         <Flex 

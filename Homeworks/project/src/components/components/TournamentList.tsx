@@ -3,6 +3,7 @@
 import { AllTournamentsProvider } from "@/model/TournamentProvider"
 import { Flex, styled } from "../../../styled-system/jsx"
 import { TournamentElement } from "./components/TournamentElement";
+import Link from "next/link";
 
 export const TournamentList = ({sport}: {sport: string}) => {
 
@@ -23,7 +24,9 @@ export const TournamentList = ({sport}: {sport: string}) => {
                 <Flex
                 direction="column">
                     {tournaments.map(tournament => (
-                        <TournamentElement key={tournament.id} tournament={tournament} />
+                        <Link href={`/tournament/${tournament.id}`} key={tournament.id}>
+                            <TournamentElement tournament={tournament} />
+                        </Link>
                     ))}
                 </Flex>
             )}

@@ -5,6 +5,7 @@ import { TournamentProvider } from "@/model/TournamentProvider"
 export const TournamentElement = ({tournament}: {tournament: Tournament}) => {
     return <Flex
     h="2xl"
+    textDecoration={{_hover: "underline"}}
     paddingX="md"
     cursor={{ _hover: "pointer"}}
     gap="xs"

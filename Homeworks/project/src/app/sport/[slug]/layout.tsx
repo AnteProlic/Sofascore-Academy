@@ -18,19 +18,20 @@ export default async function SportLayout({
             direction="column"
             position="fixed"
             h={`calc(100% - 24px)`}
-            w="256px"
+            w={{ base: "150px", md: "196px", lg: "256px"}}
             left={`calc(56px + 12px)`}
             top="68px"
             margin="md"
             borderRadius="md"
-            gap="lg">
+            gap="lg"
+            display={{base: "none", md:"flex"}}>
                 <TournamentList sport={slug}/>
                 <Favorites title="tournaments">(not deployed)</Favorites>
                 <Favorites title="teams">(not deployed)</Favorites>
                 <Favorites title="players">(not deployed)</Favorites>
             </Flex>
             <Flex
-            marginLeft="256px"
+            marginLeft={{ base: "0", md: "196px", lg: "256px"}}
             w="100%"
             direction="column">
                 {children}

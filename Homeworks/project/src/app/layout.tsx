@@ -1,14 +1,12 @@
 "use client"
 
-import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import useSWR, { SWRConfig, unstable_serialize } from 'swr'
 import { Flex, styled } from "../../styled-system/jsx"
 
 import "./globals.css";
-import { TournamentList } from "@/components/components/TournamentList";
-import { Favorites } from "@/components/components/Favorites";
 import { SportsList } from "@/components/SportsList";
+import { DateProvider } from "@/model/Context";
 
 // @ts-expect-error Default fetcher from useSWR docs
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
@@ -22,18 +20,28 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SWRConfig value={{ fetcher }}>
-          <Navbar />
-          <SportsList />
-          <Flex
-          direction="column"
-          h="50vh"
-          w={`calc(100% - 56px - 36px)`}
-          float="right"
-          marginX="md"
-          marginTop="64px"
-          padding="md">
-            {children}
-          </Flex>
+          <DateProvider>
+            <Flex direction="column">
+              <Flex 
+                h="80px"
+                position="fixed"
+                bg="linear-gradient(black, rgba(255, 255, 255, 0))"
+                w="100%"/>
+              <Navbar />
+              <SportsList />
+            </Flex>
+            <Flex
+            direction="column"
+            h="50vh"
+            w={{base: `100%`, sm: `calc(100% - 56px - 12px)`}}
+            float={{ base: "left", sm: "right"}}
+            marginTop={{ base: "86px", sm: "64px"}}
+            padding={{ base: "0", sm: "md"}}
+            zIndex="-1"
+            >
+              {children}
+            </Flex>
+          </DateProvider>
         </SWRConfig>
       </body>
     </html>

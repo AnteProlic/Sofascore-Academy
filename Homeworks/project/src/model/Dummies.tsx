@@ -2,30 +2,30 @@ import { Tournament, Event, Team, Country, Score, EventStatus, Player, Standing,
 
 export const dummyTournament: Tournament = {
   id: 0,
-  name: "...",
-  slug: "...",
+  name: "",
+  slug: "",
   sport: {
     id: 0,
-    name: "...",
-    slug: "..."
+    name: "",
+    slug: ""
   },
   country: {
     id: 0,
-    name: "..."
+    name: ""
   }
 }
 
 export const dummyCountry: Country = {
   id: 0,
-  name: "..."
+  name: ""
 }
 
 export const dummyTeam: Team = {
   id: 0,
-  name: "...",
+  name: "",
   country: dummyCountry,
-  managerName: "...",
-  venue: "..."
+  managerName: "",
+  venue: ""
 }
 
 export const dummyScore: Score = {
@@ -34,7 +34,7 @@ export const dummyScore: Score = {
 
 export const dummyEvent: Event = {
     id: 0,
-  slug: "...",
+  slug: "",
   tournament: dummyTournament,
   homeTeam: dummyTeam,
   awayTeam: dummyTeam,
@@ -46,10 +46,10 @@ export const dummyEvent: Event = {
 
 export const dummyPlayer: Player = {
   id: 0,
-  name: "...",
-  slug: "...",
+  name: "",
+  slug: "",
   country: dummyCountry,
-  position: "..."
+  position: ""
 }
 
 export const dummyStanding: Standing = {

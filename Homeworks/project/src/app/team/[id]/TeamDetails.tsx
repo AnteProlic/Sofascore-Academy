@@ -6,10 +6,12 @@ import { Span } from "@/model/interface"
 import { EventCard } from "@/components/EventCard"
 import { PlayerCard } from "./components/PlayerCard"
 import Link from "next/link"
+import { getTeamImage } from "@/api/routes"
+import { error } from "console"
 
 export const TeamDetails = ({id}: {id: number}) => {
     return <TeamProvider id={id}>
-        {team => <Flex direction="column">
+        {(team, error) => <Flex direction="column" gap="md">
             <Flex w="100%" direction="column">
                 <Flex
                 alignItems="flex-start"
@@ -19,24 +21,23 @@ export const TeamDetails = ({id}: {id: number}) => {
                 gap="xl">
                     <styled.img 
                     w="112px"
-                    src={`https://academy-backend.sofascore.dev/team/${id}/image`} />
+                    src={getTeamImage(id)} />
                     <Flex direction="column">
-                        <styled.span fontWeight="bold" fontSize="24px" marginBottom="-24px">{team.country.name}, {team.venue}</styled.span>
+                        {!error && <styled.span fontWeight="bold" fontSize="24px" marginBottom="-24px">{team.country.name}, {team.venue}</styled.span>}
                         <styled.span fontWeight="bolder" fontSize="72px">{team.name}</styled.span>
-                        <styled.span fontWeight="bold" fontSize="16px" marginTop="-12px">Manager: {team.managerName}</styled.span>
+                        {!error && <styled.span fontWeight="bold" fontSize="16px" marginTop="-12px">Manager: {team.managerName}</styled.span>}
                     </Flex>
                 </Flex>
             </Flex>
-            <Flex>
-                <Flex direction="column" w="50%">
+            <Flex gap="md">
+                <Flex direction="column" w="50%" p="sm" bg="background.tertiary" borderRadius="md" color="text.default">
                     <TeamPlayersProvider id={id}>
                         {positions => <Flex direction="column" gap="xs">
-                            <br />
-                            <div>PLAYERS: </div>
+                            <styled.span textStyle="display.large">Players: </styled.span>
                             {positions.map(pos => (
-                                <Flex key={pos.name} direction="column" gap="xs" w="100%">
-                                    <div >{pos.name}</div>
-                                    <Flex flexWrap="wrap" gap="xs"> 
+                                <Flex key={pos.name} direction="column" gap="sm" w="100%" paddingY="sm">
+                                    <styled.span textStyle="display.medium">{pos.name}</styled.span>
+                                    <Flex flexWrap="wrap" gap="sm"> 
                                         {pos.players.map(player => 
                                             <PlayerCard key={player.id} player={player}/>
                                         )}
@@ -46,15 +47,16 @@ export const TeamDetails = ({id}: {id: number}) => {
                         </Flex>}
                     </TeamPlayersProvider>
                 </Flex>
-                <Flex direction="column" w="50%">
+                <Flex direction="column" w="50%" bg="background.tertiary" p="md" borderRadius="md" color="text.default">
                     <TeamTournametsProvider id={id}>
                         {tournaments => (
                             <Flex direction="column">
-                                <div>Tournament standings:</div>
-                                    <Flex flexWrap="wrap" bg="red" w="100%" paddingY="md">
+                                <styled.span textStyle="display.large">Tournament standings:</styled.span>
+                                    <Flex flexWrap="wrap" w="100%" paddingY="md">
                                         {tournaments.map(tournament => (
                                         <Link key={tournament.id} href={`/tournament/${tournament.id}/standings`}>
-                                            <styled.span bg="black" color="text.default" w="fit-content" 
+                                            <styled.span bg="background.primary" color="text.default" w="fit-content" 
+                                            textDecoration={{_hover: "underline"}}
                                             paddingY="xs"
                                             paddingX="md"
                                             borderRadius="lg"
@@ -68,8 +70,7 @@ export const TeamDetails = ({id}: {id: number}) => {
                     </TeamTournametsProvider>
                     <TeamEventsProvider id={id} span={Span.last} page={1}>
                         {events => (<Flex direction="column" gap="xs">
-                            <br />
-                            <div>Events:</div>
+                            <styled.span textStyle="display.large">Events:</styled.span>
                             {events.map(event => (
                                 // @ts-ignore
                                 <EventCard key={event.id} event={event}/>

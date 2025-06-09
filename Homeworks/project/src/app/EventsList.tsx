@@ -6,6 +6,8 @@ import { EventCard } from "@/components/EventCard"
 import { Span } from "@/model/interface"
 import { SportProvider } from "@/model/SportProvider"
 import Link from "next/link"
+import { SafeImage } from "@/components/SafeImage"
+import { getTournamentImage } from "@/api/routes"
 
 export const EventsList = () => {
   return (
@@ -15,15 +17,25 @@ export const EventsList = () => {
                 <AllTournamentsProvider key={sport.id} slug={sport.slug}>
                         {tournaments => (
                             <Flex
-                            direction="column">
+                            w="100%"
+                            direction="column" gap="sm">
                             {tournaments.map(tournament => (
                                 <TournamentEventProvider key={tournament.id} id={tournament.id} span={Span.last} page={1}>
                                 {(events) => (
                                     <Flex 
+                                    bg="background.tertiary" w="100%" p="md"
                                     direction="column"
+                                    borderRadius="md"
                                     gap="xs">
-                                    <styled.span textDecoration={{_hover: "underline"}} w="fit-content">
-                                        <Link href={`/tournament/${tournament.id}`}>{tournament.name}</Link>
+                                    <styled.span color="text.default" textDecoration={{_hover: "underline"}} w="fit-content">
+                                        <Link href={`/tournament/${tournament.id}`}>
+                                            <Flex alignItems="center" marginBottom="sm" gap="sm">
+                                                <styled.div h="2xl" w="auto" aspectRatio="1/1" bg="background.bg" borderRadius="50%">
+                                                    <SafeImage src={getTournamentImage(tournament.id)} alt={tournament.slug} />
+                                                </styled.div>
+                                                {tournament.name}
+                                            </Flex>
+                                        </Link>
                                     </styled.span>
                                     {events.map(event => (
                                         <EventCard key={event.id} event={event}/>

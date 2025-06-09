@@ -5,14 +5,15 @@ import { EventDetailsProvider } from "@/model/EventProvider"
 import { Span, Event } from "@/model/interface"
 import { EventCard } from "@/components/EventCard"
 import { SafeImage } from "@/components/SafeImage"
+import { getPlayerImage } from "@/api/routes"
 
 export const PlayerDetails = ({id}: {id: number}) => {
   return (
     <PlayerProvider id={id}>
         {player => <Flex>
-          <Flex direction="column" width="50%" h="100%" >
+          <Flex direction="column" width="50%" h="100%" alignItems="center">
             <styled.div bg="black" w={`calc(100% - 24px)`} h="auto" aspectRatio="1/1" p="md" borderRadius="md">
-              <SafeImage src={`https://academy-backend.sofascore.dev/player/${id}/image`} alt={player.slug} placeholder="/user.png"/>
+              <SafeImage src={getPlayerImage(player.id)} alt={player.slug} placeholder="/user.png"/>
               <Flex direction="column" bg="linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);"
                h="128px" position="relative" 
                top="-128px" 
@@ -27,7 +28,8 @@ export const PlayerDetails = ({id}: {id: number}) => {
           </Flex>
           <PlayerEventsProvider id={id} span={Span.last} page={0} >
             {events => (
-              <Flex direction="column" width="50%" gap="xs">
+              <Flex direction="column" width="50%" gap="xs" p="sm" 
+              bg="background.tertiary" color="text.default" borderRadius="md">
                 <div>Events:</div>
                 {events.map(event => (
                   // @ts-ignore

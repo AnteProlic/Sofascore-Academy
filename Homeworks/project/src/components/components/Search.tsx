@@ -4,23 +4,39 @@ import { Flex, styled } from "../../../styled-system/jsx"
 import { SearchPlayerProvider, SearchTeamProvider } from '@/model/SearchProvider'
 import { SafeImage } from '../SafeImage'
 import Link from 'next/link'
+import { getPlayerImage, getTeamImage } from '@/api/routes'
+import { DateInput } from './components/DateInput'
 
 export const Search = () => {
-    const [display, setDisplay] = useState<Boolean>(false)
+    const [displaySearch, setDisplaySearch] = useState<Boolean>(false)
+    const [displayDate, setDisplayDate] = useState<Boolean>(false)
+
     const [query, setQuery] = useState<string>("")
-    const targetRef = useRef<HTMLInputElement>(null)
+    const searchRef = useRef<HTMLInputElement>(null)
+    const dateRef = useRef<HTMLImageElement>(null)
+
+    const searchResultRef = useRef<HTMLDivElement>(null)
+    const datePopupRef = useRef<HTMLDivElement>(null)
+
+    const handleClick = (e: MouseEvent) => {
+        if (searchRef.current?.contains(e.target as Node)) {
+            setDisplaySearch(true)
+        } else if (searchResultRef.current?.contains(e.target as Node)) {}
+        else {
+            setDisplaySearch(false)
+        }
+
+        if (dateRef.current?.contains(e.target as Node)) {
+            setDisplayDate(true)
+        } else if (datePopupRef.current?.contains(e.target as Node)) {} 
+        else {
+            setDisplayDate(false)
+        }
+    }
 
     useEffect(() => {
         const timer = setTimeout(() => {
         }, 500)
-        
-        const handleClick = (e: MouseEvent) => {
-        if (targetRef.current?.contains(e.target as Node)) {
-            setDisplay(true)
-        } else {
-            setDisplay(false)
-        }
-        }
 
         document.addEventListener('click', handleClick)
         return () => {
@@ -44,7 +60,7 @@ export const Search = () => {
             zIndex="1"/>
             
             <styled.input
-            ref={targetRef}
+            ref={searchRef}
             type="text"
             bg="background.secondary"
             borderRadius="sm"
@@ -54,20 +70,26 @@ export const Search = () => {
             color="black"
             placeholder="Search for tournaments, clubs, players..."
             boxShadow="inset 0 0 10px #424242;"
-            w="516px" 
+            w={{base: "70vw", sm:"516px" }}
             onChange={(e) => {setQuery(e.target.value)}}/>
-
+            
             <styled.img 
+            ref={dateRef}
             src="/calendar.png"
             marginLeft="-2xl"
             h="xl"
             cursor={{ _hover: "pointer"}}
-            zIndex="1"/>
+            zIndex="1"
+            onClick={() => displayDate?setDisplayDate(false):setDisplayDate(true)}/>
         </Flex>
-        {display && (query.length >= 2) && (query.length <= 100) && <Flex 
+
+        {displaySearch && (query.length >= 2) && (query.length <= 100) && <Flex 
+        ref={searchResultRef}
         position="fixed" marginTop="50px" 
         borderRadius="md" direction="column"
-        bg="background.bg" w="516px" maxHeight="80vh" overflow="scroll" overflowX="hidden" p="sm">
+        bg="background.bg" w={{base: "90vw", sm:"516px" }} maxHeight="80vh" 
+        scrollbar="hidden"
+        overflow="scroll" overflowX="hidden" p="sm">
             <SearchPlayerProvider query={query}> 
                 {players => (
                     <Flex direction="column" gap="xs">
@@ -80,7 +102,7 @@ export const Search = () => {
                                     borderColor="background.primary"
                                     border="solid 1px">
                                         <SafeImage 
-                                        src={`https://academy-backend.sofascore.dev/player/${player.id}/image`}
+                                        src={getPlayerImage(player.id)}
                                         placeholder="/user.png"
                                         alt={player.slug}/>
                                     </Flex>
@@ -91,6 +113,7 @@ export const Search = () => {
                     </Flex>
                 )}
             </SearchPlayerProvider>
+
             <SearchTeamProvider query={query}> 
                 {teams => (
                     <Flex direction="column" gap="xs">
@@ -103,7 +126,7 @@ export const Search = () => {
                                     borderColor="background.primary"
                                     border="solid 1px">
                                         <SafeImage 
-                                        src={`https://academy-backend.sofascore.dev/team/${team.id}/image`}
+                                        src={getTeamImage(team.id)}
                                         placeholder="/user.png"
                                         alt={team.name}/>
                                     </Flex>
@@ -114,7 +137,14 @@ export const Search = () => {
                     </Flex>
                 )}
             </SearchTeamProvider>
+        
         </Flex>
         }
+
+        {displayDate && <Flex ref={datePopupRef} position="fixed" marginTop="50px"
+        bg="background.tertiary" w="fit-content" h="3xl" p="sm" marginLeft="360px" borderRadius="sm">
+            <DateInput />
+        </Flex>}
+        
     </Flex>
 }

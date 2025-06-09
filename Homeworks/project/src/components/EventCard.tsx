@@ -19,17 +19,21 @@ export const EventCard = ({event}: {event: Event}) => {
     p="sm"
     w="100%"
     alignItems="center"
-    justifyContent="space-between">
-        <Flex direction="column">
+    justifyContent={{base:"space-between"}}
+    fontSize={{base: "min(3vw, 12px)", sm:"14px", md:"16px" }}>
+        <Flex direction="column" w="fit-content">
             <EventScore team={event.homeTeam} score={event.homeScore.total}/>
             <EventScore team={event.awayTeam} score={event.awayScore.total}/>
         </Flex>
-        <styled.span marginX="4xl" w="128px" textAlign="center" textDecoration={{_hover: "underline"}}>
-            <Link href={`/tournament/${event.tournament.id}`} onClick={e => e.stopPropagation()}>{event.tournament.name}</Link></styled.span>
-        <styled.span marginX="4xl" w="128px" textAlign="center">{event.status}</styled.span>
-        <Flex direction="column" alignItems="center">
-            <styled.span w="128px" textAlign="center">{day}.{month}.{year}.</styled.span>
-            <styled.span w="128px" textAlign="center">{hour}:{min}</styled.span>
+        <Flex display={{base: "none", sm:"flex" }} marginX={{base: "24px", sm:"4xl" }} w={{base: "12px", sm:"16px", md:"20%" }} textAlign="center" textTransform="uppercase">{event.status}</Flex>
+        <styled.span marginX={{base: "24px", sm:"4xl" }} w={{base: "56px", sm:"24px", md:"20%" }} textAlign="center" textDecoration={{_hover: "underline"}}>
+            <Link href={`/tournament/${event.tournament.id}`} onClick={e => e.stopPropagation()}>{event.tournament.name}</Link>
+        </styled.span>
+        <Flex justifyContent="end" w={{base: "56px", sm:"156px", md:"20%" }}>
+            <Flex direction="column" w={{base: "fit-content", sm:"200px" }}>
+                <styled.span textAlign="center">{day}.{month}.{year}.</styled.span>
+                <styled.span textAlign="center">{hour}:{min}</styled.span>
+            </Flex>
         </Flex>
     </Flex>
 }

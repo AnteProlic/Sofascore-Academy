@@ -53,7 +53,7 @@ export const TeamDetails = ({id}: {id: number}) => {
                         </Flex>}
                     </TeamPlayersProvider>
                 </Flex>
-                <Flex direction="column" w="50%" bg="background.tertiary" p="md" borderRadius="md" color="text.default">
+                <Flex h="fit-content" direction="column" w="50%" bg="background.tertiary" p="md" borderRadius="md" color="text.default">
                     <TeamTournametsProvider id={id}>
                         {tournaments => (
                             <Flex direction="column">

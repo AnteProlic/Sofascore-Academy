@@ -120,7 +120,7 @@ export const Search = () => {
                     <Flex direction="column" gap="xs">
                         {teams.length > 0 && <styled.span w="100%" textAlign="center">Teams</styled.span>}
                         {teams.map(team => (
-                            <Link key={team.id} href={`/player/${team.id}`}>
+                            <Link key={team.id} href={`/team/${team.id}`}>
                                 <Flex bg="background.tertiary" borderRadius="sm" p="xs" h="3xl" gap="sm" textDecoration={{_hover: "underline"}}>
                                     <Flex h="100%" w="auto" aspectRatio="1/1" 
                                     borderRadius="50%" overflow="clip"

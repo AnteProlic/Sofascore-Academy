@@ -11,8 +11,8 @@ import { useTheme } from "@/model/Context"
 export const PlayerDetails = ({id}: {id: number}) => {    
   return (
     <PlayerProvider id={id}>
-        {player => <Flex>
-          <Flex direction="column" width="50%" h="100%" alignItems="center">
+        {player => <Flex direction={{base: "column", lg: "row"}}>
+          <Flex direction="column" w={{base: "20%", lg: "40%"}} h="100%" alignItems="center">
             <styled.div bg="background.primary" w={`calc(100% - 24px)`} h="auto" aspectRatio="1/1" p="md" borderRadius="md">
               <SafeImage src={getPlayerImage(player.id)} alt={player.slug} placeholder="/user.png"/>
               <Flex direction="column" bg="linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);"
@@ -29,7 +29,7 @@ export const PlayerDetails = ({id}: {id: number}) => {
           </Flex>
           <PlayerEventsProvider id={id} span={Span.last} page={0} >
             {events => (
-              <Flex direction="column" width="50%" gap="xs" p="sm" 
+              <Flex direction="column" w={{base: "100%", lg: "60%"}} gap="xs" p="sm" 
               bg="background.tertiary" color="text.default" borderRadius="md">
                 <div>Events:</div>
                 {events.map(event => (

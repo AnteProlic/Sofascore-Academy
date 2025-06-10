@@ -6,7 +6,7 @@ import { getPlayerImage } from "@/api/routes"
 
 export const PlayerCard = ({player}: {player: Player}) => {
     return <Flex h="5xl" alignItems="center" gap="sm" 
-        bg="background.primary" w="230px" color="text.default" 
+        bg="background.primary" w="180px" color="text.default" 
         p="xs" borderRadius="md" 
         onClick={() => redirect(`/player/${player.id}`)}
         cursor={{_hover: "pointer"}}>

@@ -13,10 +13,10 @@ export const StandingsList = ({id}: {id: number}) => {
   const [selectedType, setSelectedType] = useState<StandingsType>(StandingsType.total)
 
   return (
-    <Flex w="100%">
+    <Flex w="100%" direction={{base: "column", md: "row"}}>
       <TournamentProvider id={Number(id)}>
         {tournament => (<Flex 
-        direction="column" w="50%" 
+        direction="column" w={{base: "100%", md: "50%"}} 
         h={`calc(100vh - ${80}px)`} 
         alignItems="center"
         justifyContent="center">
@@ -35,7 +35,7 @@ export const StandingsList = ({id}: {id: number}) => {
           </Flex>
         </Flex>)}
       </TournamentProvider>
-      <Flex w="50%" justifyContent="center">
+      <Flex w={{base: "100%", md: "50%"}} justifyContent="center">
         <TournamentStandingsProvider id={id}>
           {(standings) => (
             <Flex direction="column" w="fit-content" color="text.default" 

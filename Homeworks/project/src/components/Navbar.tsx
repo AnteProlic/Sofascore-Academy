@@ -10,7 +10,8 @@ export const Navbar = () => {
     return <Flex 
     h="80px"
     position="fixed"
-    w="100%"
+    right="0"
+    w={`calc(100% - 80px)`}
     justifyContent="flex-end" >
         <Flex 
         boxShadow="rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;"
@@ -19,7 +20,7 @@ export const Navbar = () => {
         marginTop={{base: "0", sm: "md"}}
         marginRight={{base: "0", sm: "md"}}
         bg="background.tertiary"
-        w={{base: "100%", sm: `calc(100% - 92px)`}}
+        w="100%"
         borderRadius={{base: "0", sm: "md"}}
         justifyContent="space-between"
         align="stretch">

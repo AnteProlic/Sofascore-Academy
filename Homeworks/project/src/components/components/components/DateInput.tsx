@@ -7,9 +7,9 @@ export const DateInput = () => {
     const {date, setDate} = useDate()
     const {theme, setTheme} = useTheme()
 
-    return <Flex gap="xs">
+    return <Flex gap="xs" alignItems="center">
             <Flex direction="column" color="text.title">
-                <styled.input colorScheme={theme=="dark"?"dark":{}} type="date" bg="background.bg" borderRadius="xs" w="128px"
+                <styled.input p="xs" colorScheme={theme=="dark"?"dark":{}} type="date" bg="background.bg" borderRadius="xs" w="128px"
                 onChange={(e) => setValue(e.target.value)}/>
             </Flex>
         <Flex h="100%" w="auto" aspectRatio="1/1" 

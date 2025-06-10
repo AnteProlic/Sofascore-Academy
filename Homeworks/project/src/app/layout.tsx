@@ -21,21 +21,20 @@ const Main = ({
   return <html lang="en" data-theme={theme}>
         <body>
           <SWRConfig value={{ fetcher }}>
-              <Flex direction="column">
-                <Flex
-                  h="80px"
-                  position="fixed"
-                  bg="linear-gradient(black, rgba(255, 255, 255, 0))"
-                  w="100%"/>
-                <Navbar />
-                <SportsList />
-              </Flex>
+              <Flex
+                h="80px"
+                right="0"
+                position="fixed"
+                bg="linear-gradient(black, rgba(255, 255, 255, 0))"
+                w="100%"/>
+              <SportsList />
+              <Navbar />
               <Flex
               direction="column"
               h="50vh"
               w={{base: `100%`, sm: `calc(100% - 56px - 12px)`}}
               float={{ base: "left", sm: "right"}}
-              marginTop={{ base: "86px", sm: "64px"}}
+              marginTop={{ base: "100px", sm: "64px"}}
               padding={{ base: "0", sm: "md"}}
               zIndex="-1"
               >

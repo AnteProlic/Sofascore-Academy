@@ -35,8 +35,8 @@ export const TeamDetails = ({id}: {id: number}) => {
                     </Flex>
                 </Flex>
             </Flex>
-            <Flex gap="md">
-                <Flex direction="column" w="50%" p="sm" bg="background.tertiary" borderRadius="md" color="text.default">
+            <Flex gap="md" direction={{base: "column", lg: "row"}}>
+                <Flex direction="column" w={{base: "100%", lg: "40%"}} p="sm" bg="background.tertiary" borderRadius="md" color="text.default">
                     <TeamPlayersProvider id={id}>
                         {positions => <Flex direction="column" gap="xs">
                             <styled.span textStyle="display.large">Players: </styled.span>
@@ -53,7 +53,7 @@ export const TeamDetails = ({id}: {id: number}) => {
                         </Flex>}
                     </TeamPlayersProvider>
                 </Flex>
-                <Flex h="fit-content" direction="column" w="50%" bg="background.tertiary" p="md" borderRadius="md" color="text.default">
+                <Flex h="fit-content" direction="column" w={{base: "100%", lg: "60%"}} bg="background.tertiary" p="md" borderRadius="md" color="text.default">
                     <TeamTournametsProvider id={id}>
                         {tournaments => (
                             <Flex direction="column">

@@ -1,7 +1,6 @@
 import { TournamentList } from "@/components/components/TournamentList";
 import { Flex, styled } from "../../../../styled-system/jsx"
 import { Favorites } from "@/components/components/Favorites";
-import { Navbar } from "@/components/Navbar";
 
 export default async function SportLayout({
     params,

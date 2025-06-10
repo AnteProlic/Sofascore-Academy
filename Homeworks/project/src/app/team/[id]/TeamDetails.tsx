@@ -7,9 +7,10 @@ import { EventCard } from "@/components/EventCard"
 import { PlayerCard } from "./components/PlayerCard"
 import Link from "next/link"
 import { getTeamImage } from "@/api/routes"
-import { error } from "console"
+import { SafeImage } from "@/components/SafeImage"
 
 export const TeamDetails = ({id}: {id: number}) => {
+
     return <TeamProvider id={id}>
         {(team, error) => <Flex direction="column" gap="md">
             <Flex w="100%" direction="column">
@@ -19,10 +20,15 @@ export const TeamDetails = ({id}: {id: number}) => {
                 marginLeft="lg"
                 h="128px"
                 gap="xl">
-                    <styled.img 
-                    w="112px"
-                    src={getTeamImage(id)} />
-                    <Flex direction="column">
+                    <styled.div
+                        w="124px"
+                        bg="background.img"
+                        p="sm"
+                        borderRadius="sm">
+                        <SafeImage 
+                            src={getTeamImage(id)} alt={`${team.name}`} />
+                    </styled.div>
+                    <Flex direction="column" color="text.title">
                         {!error && <styled.span fontWeight="bold" fontSize="24px" marginBottom="-24px">{team.country.name}, {team.venue}</styled.span>}
                         <styled.span fontWeight="bolder" fontSize="72px">{team.name}</styled.span>
                         {!error && <styled.span fontWeight="bold" fontSize="16px" marginTop="-12px">Manager: {team.managerName}</styled.span>}

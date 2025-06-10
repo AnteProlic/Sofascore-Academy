@@ -2,7 +2,7 @@
 
 import { Flex, styled } from "../../../../styled-system/jsx"
 import { EventCard } from "@/components/EventCard"
-import { useDate } from "@/model/Context"
+import { useDate, useTheme } from "@/model/Context"
 import { EventProvider } from "@/model/EventProvider"
 
 export const EventsList = ({slug}: {slug: string}) => {

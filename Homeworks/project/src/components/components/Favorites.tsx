@@ -1,3 +1,5 @@
+"use client"
+import { useTheme } from "@/model/Context"
 import { Flex, styled } from "../../../styled-system/jsx"
 
 type FavoriteProps = {
@@ -6,8 +8,10 @@ type FavoriteProps = {
 }
 
 export const Favorites = ({title, children}: FavoriteProps) => {
+    const {theme, setTheme} = useTheme()
 
     return <Flex 
+    data-theme={theme}
     direction="column"
     bg="background.primary"
     borderRadius="md"

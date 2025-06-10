@@ -7,6 +7,7 @@ import { StandingsType } from "@/model/interface"
 import { useState } from "react"
 import { SafeImage } from "@/components/SafeImage"
 import { getTournamentImage } from "@/api/routes"
+import { useTheme } from "@/model/Context"
 
 export const StandingsList = ({id}: {id: number}) => {
   const [selectedType, setSelectedType] = useState<StandingsType>(StandingsType.total)
@@ -19,14 +20,15 @@ export const StandingsList = ({id}: {id: number}) => {
         h={`calc(100vh - ${80}px)`} 
         alignItems="center"
         justifyContent="center">
-          <Flex h="320px" w="auto" aspectRatio="1/1" bg="white" borderRadius="50%" p="xl" border="solid 6px">
+          <Flex h="320px" w="auto" aspectRatio="1/1" bg="background.img" 
+          borderRadius="50%" p="xl" border="solid 6px" borderColor="background.primary">
             <SafeImage 
               src={getTournamentImage(tournament.id)}
               placeholder="/loading.gif"
               alt={`${tournament.slug}`}
             />
           </Flex>
-          <Flex direction="column" alignItems="center">
+          <Flex direction="column" alignItems="center" color="text.title">
             <styled.span fontSize="92px">{tournament.name}</styled.span>
             <styled.span fontSize="32px" 
             marginTop="-12px">{tournament.country.name}</styled.span>
@@ -44,8 +46,8 @@ export const StandingsList = ({id}: {id: number}) => {
                   <styled.span key={type}
                   textTransform="uppercase"
                   paddingX="md"
-                  bg={{base: (type == selectedType)?"background.bg":"background.tertiary"}}
-                  color={{base: (type == selectedType)?"background.tertiary":"background.bg"}}
+                  bg={{base: (type == selectedType)?"background.tertiary":"background.primary"}}
+                  color={{base: (type == selectedType)?"text.default":"background.tertiary"}}
                   textDecoration={{_hover: "underline"}}
                   cursor={{_hover: "pointer"}}
                   onClick={() => {setSelectedType(type as StandingsType)}}>{type}</styled.span>

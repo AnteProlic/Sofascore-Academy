@@ -8,5 +8,6 @@ export default async function Sport ({
   params: Promise<{ slug: string }>
 }) {
     const { slug } = await params
+    
     return <EventsList slug={slug}/>
 }

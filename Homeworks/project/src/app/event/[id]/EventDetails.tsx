@@ -5,15 +5,19 @@ import { EventDetailsProvider, EventIncidentProvider } from "@/model/EventProvid
 import { TeamCard } from "./components/TeamCard"
 import { IncidentCard } from "./components/IncidentCard"
 import Link from "next/link"
+import { useTheme } from "@/model/Context"
 
 export const EventDetails = ({id}: {id: number}) => {
+  const {theme, setTheme} = useTheme()
+  
   return (
     <EventDetailsProvider id={id}>
             {event => {
               const {year, month, day, hour, min} = parseTime(event.startDate ?? "")
               return (
-                <Flex
-                direction="column">
+                <Flex 
+                data-theme={theme}
+                direction="column" color="text.title">
                   <styled.div paddingLeft="xs">{day}.{month}.{year}. | {hour}:{min} | 
                     <styled.span marginLeft="xs" textDecoration={{_hover: "underline"}}>
                       <Link href={`/tournament/${event.tournament.id}`}>

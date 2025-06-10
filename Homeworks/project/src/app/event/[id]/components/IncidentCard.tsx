@@ -10,6 +10,7 @@ export const IncidentCard = ({incident}: {incident: Incident}) => {
     borderRadius="md"
     w={("text" in incident)?"128px":"256px"}
     alignItems="center"
+    color="text.default"
     alignSelf={
         ("teamSide" in incident) ? (((incident as Card).teamSide == "home") ? "flex-start": "flex-end"): 
         (("scoringTeam" in incident) ? (((incident as Goal).scoringTeam == "home") ? "flex-start": "flex-end"): "center")

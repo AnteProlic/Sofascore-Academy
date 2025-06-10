@@ -9,7 +9,7 @@ export const EventScore = ({team, score}: {team: Team, score: number}) => {
     return <Flex w={{base: "min(45vw,196px)", sm:"200px", md:"256px" }} h={{base: "24px", sm:"2xl" }} justifyContent="space-between" alignItems="center">
         <Link href={`/team/${team.id}`} onClick={(e) => e.stopPropagation()}>
             <Flex textDecoration={{_hover: "underline"}} gap="sm" alignItems="center">
-                <Flex w={{base: "lg", sm:"xl" }} h="auto" aspectRatio="1/1">
+                <Flex w={{base: "lg", sm:"xl" }} h="auto" aspectRatio="1/1" >
                     <SafeImage 
                     src={getTeamImage(team.id)}
                     alt={team.name}/>

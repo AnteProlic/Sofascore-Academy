@@ -62,7 +62,7 @@ export const Search = () => {
             <styled.input
             ref={searchRef}
             type="text"
-            bg="background.secondary"
+            bg="background.search"
             borderRadius="sm"
             outline="none"
             paddingLeft="3xl"
@@ -87,8 +87,8 @@ export const Search = () => {
         ref={searchResultRef}
         position="fixed" marginTop="50px" 
         borderRadius="md" direction="column"
-        bg="background.bg" w={{base: "90vw", sm:"516px" }} maxHeight="80vh" 
-        scrollbar="hidden"
+        bg="background.secondary" w={{base: "90vw", sm:"516px" }} maxHeight="80vh" 
+        scrollbar="hidden" color="text.default"
         overflow="scroll" overflowX="hidden" p="sm">
             <SearchPlayerProvider query={query}> 
                 {players => (
@@ -96,11 +96,12 @@ export const Search = () => {
                         {players.length > 0 && <styled.span w="100%" textAlign="center">Players</styled.span>}
                         {players.map(player => (
                             <Link key={player.id} href={`/player/${player.id}`}>
-                                <Flex h="2xl" gap="sm" textDecoration={{_hover: "underline"}}>
+                                <Flex bg="background.tertiary" borderRadius="sm" p="xs" h="3xl" gap="sm" textDecoration={{_hover: "underline"}}>
                                     <Flex h="100%" w="auto" aspectRatio="1/1" 
                                     borderRadius="50%" overflow="clip"
                                     borderColor="background.primary"
-                                    border="solid 1px">
+                                    border="solid 1px"
+                                    bg="background.img">
                                         <SafeImage 
                                         src={getPlayerImage(player.id)}
                                         placeholder="/user.png"
@@ -120,11 +121,12 @@ export const Search = () => {
                         {teams.length > 0 && <styled.span w="100%" textAlign="center">Teams</styled.span>}
                         {teams.map(team => (
                             <Link key={team.id} href={`/player/${team.id}`}>
-                                <Flex h="2xl" gap="sm" textDecoration={{_hover: "underline"}}>
+                                <Flex bg="background.tertiary" borderRadius="sm" p="xs" h="3xl" gap="sm" textDecoration={{_hover: "underline"}}>
                                     <Flex h="100%" w="auto" aspectRatio="1/1" 
                                     borderRadius="50%" overflow="clip"
                                     borderColor="background.primary"
-                                    border="solid 1px">
+                                    border="solid 1px"
+                                    bg="background.img">
                                         <SafeImage 
                                         src={getTeamImage(team.id)}
                                         placeholder="/user.png"

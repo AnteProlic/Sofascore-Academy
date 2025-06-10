@@ -1,3 +1,5 @@
+"use client"
+
 import { Event } from "@/model/interface"
 import { Flex, styled } from "../../styled-system/jsx"
 import { EventScore } from "./components/EventScore"

@@ -6,13 +6,14 @@ import { Span, Event } from "@/model/interface"
 import { EventCard } from "@/components/EventCard"
 import { SafeImage } from "@/components/SafeImage"
 import { getPlayerImage } from "@/api/routes"
+import { useTheme } from "@/model/Context"
 
-export const PlayerDetails = ({id}: {id: number}) => {
+export const PlayerDetails = ({id}: {id: number}) => {    
   return (
     <PlayerProvider id={id}>
         {player => <Flex>
           <Flex direction="column" width="50%" h="100%" alignItems="center">
-            <styled.div bg="black" w={`calc(100% - 24px)`} h="auto" aspectRatio="1/1" p="md" borderRadius="md">
+            <styled.div bg="background.primary" w={`calc(100% - 24px)`} h="auto" aspectRatio="1/1" p="md" borderRadius="md">
               <SafeImage src={getPlayerImage(player.id)} alt={player.slug} placeholder="/user.png"/>
               <Flex direction="column" bg="linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);"
                h="128px" position="relative" 

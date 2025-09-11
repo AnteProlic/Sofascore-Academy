@@ -17,12 +17,37 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
+    extend: {
+      tokens: {
+        colors: {
+          type: {
+            electric: { value: "#F8D030" },
+            fairy: { value: "#F0B6BC" },
+            fighting: { value: "#C03028" },
+            fire: { value: "#F08030" },
+            flying: { value: "#A890F0" },
+            ghost: { value: "#705898" },
+            grass: { value: "#78C850" },
+            ground: { value: "#E0C068" },
+            ice: { value: "#98D8D8" },
+            normal: { value: "#A8A878" },
+            poison: { value: "#A040A0" },
+            psychic: { value: "#F85888" },
+            steel: { value: "#B8B8D0" },
+            water: { value: "#6890F0" },
+            bug: { value: "#A8B820" },
+            dragon: { value: "#7038F8" },
+            rock: { value: "#B8A038" }
+          },
+        }
+      },
+    },
     breakpoints,
     tokens,
     textStyles,
     semanticTokens: {
-      colors,
-    },
+      colors
+    }
   },
 
   conditions: {
